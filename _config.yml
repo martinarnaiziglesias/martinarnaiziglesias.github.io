@@ -131,7 +131,7 @@ author:
     - label: "Google Scholar"
       icon: "fab fa-fw fa-google-scholar"
       url: "https://scholar.google.com"
-    - label: "Research Gate"
+    - label: "ResearchGate"
       icon: "fab fa-fw fa-researchgate"
       url: "https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias"
     - label: "Linkedin"
