@@ -115,7 +115,7 @@ analytics:
 author:
   name             : #"Your Name"
   avatar           : "foto.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD Student in Applied Mathematics."
+  bio              : "PhD Student in Applied <br> Mathematics."
   location         : "Paris 1 Panthéon-Sorbonne"
   email            :
   links:
