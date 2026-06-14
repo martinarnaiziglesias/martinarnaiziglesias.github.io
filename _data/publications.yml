@@ -1,0 +1,25 @@
+# ============================================================
+#  Your publications live here.
+#  To add a new paper, copy one block below (from the dash "-"
+#  to the last "url") and fill it in. Keep the spacing exactly
+#  as shown. The homepage updates automatically.
+#  Tip: your name is bolded automatically wherever it appears.
+# ============================================================
+
+- title: "Mirror Descent Algorithms for Risk Budgeting Portfolios"
+  authors: "Martín Arnaiz Iglesias, Adil Rengim Cetingoz, Noufel Frikha"
+  year: 2024
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2411.12323"
+    - label: "HAL"
+      url: "https://hal.science/hal-04787053"
+    - label: "Code"
+      url: "https://github.com/martinarnaiziglesias/mirror_descent_rb"
+
+# - title: "Title of your next paper"
+#   authors: "Martín Arnaiz Iglesias, Co-author"
+#   year: 2025
+#   links:
+#     - label: "arXiv"
+#       url: "https://arxiv.org/abs/..."
