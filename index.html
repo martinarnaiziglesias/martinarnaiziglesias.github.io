@@ -1,60 +1,413 @@
 ---
-layout: home
-author_profile: true
+title: Martín Arnaiz Iglesias
+# This page is fully self-contained and does NOT use the Minimal Mistakes layout.
+# Publications are read from _data/publications.yml — edit that file to add papers.
 ---
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martín Arnaiz Iglesias</title>
-    <style>
-        body {
-            font-size: 16px; /* Tamaño de la letra */
-            line-height: 1.6; /* Espaciado entre líneas */
-            font-family: Arial, sans-serif; /* Fuente legible */
-            margin: 20px; /* Márgenes alrededor del contenido */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martín Arnaiz Iglesias — PhD in Applied Mathematics & Quantitative Finance</title>
+<meta name="description" content="Martín Arnaiz Iglesias — PhD student in Applied Mathematics and Quantitative Finance at the Centre d'Économie de la Sorbonne. Research on stochastic approximation schemes in finance and risk budgeting.">
 
-        a {
-            color: #007bff; /* Color de los enlaces */
-            text-decoration: none; /* Sin subrayado */
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        a:hover {
-            text-decoration: underline; /* Subrayado al pasar el mouse */
-        }
+<style>
+/* ---- Design tokens. Change --accent to recolor the whole site. ---- */
+:root{
+  --bg:#F6F7F5;
+  --surface:#FFFFFF;
+  --ink:#15191A;
+  --deep:#0E1A15;          /* dark green-black band (hero + contact) */
+  --accent:#147A5C;        /* emerald accent on light backgrounds */
+  --accent-soft:#8FDCC1;   /* mint accent on dark backgrounds */
+  --muted:#5E6A64;
+  --line:#E3E6E2;
+  --line-dark:rgba(255,255,255,0.16);
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
 
-        strong {
-            font-weight: bold; /* Negrita para publicaciones */
-        }
-    </style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+a{color:var(--accent);text-decoration:none;transition:color .18s ease;}
+img{display:block;max-width:100%;}
+
+/* ---- Eyebrow label (mono, the structural signature) ---- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:26px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block;}
+.eyebrow.on-dark{color:var(--accent-soft);}
+.eyebrow.on-dark::before{background:var(--accent-soft);}
+
+/* ---- Nav ---- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,247,245,0.82);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-name{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;}
+.nav-name:hover{color:var(--accent);}
+.nav-links{display:flex;gap:30px;}
+.nav-links a{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:0.06em;
+  color:var(--muted);text-transform:lowercase;
+}
+.nav-links a:hover{color:var(--ink);}
+
+/* ---- Hero ---- */
+.hero{background:var(--deep);color:#EDEFEA;position:relative;overflow:hidden;}
+.hero-grid{
+  display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(32px,6vw,72px);
+  align-items:center;
+  padding:clamp(56px,9vw,108px) 0 clamp(40px,6vw,68px);
+}
+.hero-name{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(2.7rem,6.2vw,4.6rem);
+  line-height:1.0;
+  letter-spacing:-0.022em;
+  color:#FCFDFB;
+  margin:6px 0 18px;
+}
+.hero-sub{
+  font-family:var(--mono);font-size:13.5px;letter-spacing:0.02em;
+  color:var(--accent-soft);margin-bottom:26px;
+}
+.hero-lead{
+  font-size:18.5px;line-height:1.6;max-width:46ch;
+  color:#C9D2CC;margin-bottom:34px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{
+  font-family:var(--mono);font-size:13px;letter-spacing:0.04em;
+  padding:13px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;
+  transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;
+}
+.btn i{font-size:11px;}
+.btn-solid{background:var(--accent);color:#FCFDFB;border:1px solid var(--accent);}
+.btn-solid:hover{background:#10674E;border-color:#10674E;color:#FCFDFB;transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:#EDEFEA;border:1px solid var(--line-dark);}
+.btn-ghost:hover{border-color:var(--accent-soft);color:#FCFDFB;transform:translateY(-2px);}
+
+.hero-photo{justify-self:end;}
+.hero-photo img{
+  width:clamp(180px,22vw,272px);height:clamp(220px,27vw,336px);
+  object-fit:cover;border-radius:3px;
+  border:1px solid var(--line-dark);
+  filter:grayscale(8%);
+}
+
+/* ---- Affiliation strip (real, replaces vanity metrics) ---- */
+.affil{
+  border-top:1px solid var(--line-dark);
+  display:flex;flex-wrap:wrap;gap:10px 26px;
+  padding:20px clamp(20px,5vw,56px);
+  max-width:var(--maxw);margin:0 auto;
+}
+.affil span{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;
+  color:#8C968F;display:flex;align-items:center;gap:26px;
+}
+.affil span:not(:last-child)::after{content:"";width:4px;height:4px;border-radius:50%;background:#3A4640;}
+
+/* ---- Sections ---- */
+.section{padding:clamp(64px,9vw,118px) 0;}
+.section-alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+/* Research */
+.research-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(28px,5vw,64px);align-items:start;}
+.research-body p{font-size:20px;line-height:1.62;color:var(--ink);}
+.research-body a{border-bottom:1px solid rgba(20,122,92,0.3);}
+.research-body a:hover{border-bottom-color:var(--accent);}
+.research-aside{
+  background:var(--bg);border:1px solid var(--line);border-radius:4px;
+  padding:26px 28px;
+}
+.section-alt .research-aside{background:#FAFBF9;}
+.aside-label{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.research-aside p{font-size:15.5px;line-height:1.6;color:var(--muted);}
+
+/* Publications */
+.pub-list{list-style:none;}
+.pub{
+  display:grid;grid-template-columns:84px 1fr;gap:28px;
+  padding:30px 0;border-top:1px solid var(--line);
+}
+.pub:last-of-type{border-bottom:1px solid var(--line);}
+.pub-year{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:5px;}
+.pub-title{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.72rem);font-weight:500;line-height:1.22;letter-spacing:-0.01em;margin-bottom:9px;}
+.pub-authors{font-size:15.5px;color:var(--muted);margin-bottom:16px;}
+.pub-authors strong{color:var(--ink);font-weight:600;}
+.pub-links,.mat{display:flex;flex-wrap:wrap;gap:9px;}
+.chip{
+  font-family:var(--mono);font-size:12px;letter-spacing:0.03em;
+  padding:6px 13px;border:1px solid var(--line);border-radius:2px;
+  color:var(--muted);background:var(--surface);
+  transition:all .17s ease;
+}
+.section-alt .chip{background:var(--bg);}
+.chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+.pub-more{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:24px;letter-spacing:0.02em;}
+
+/* Teaching */
+.course{padding:30px 0;border-top:1px solid var(--line);}
+.course:last-of-type{border-bottom:1px solid var(--line);}
+.course-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
+.course-title{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.55rem);font-weight:500;letter-spacing:-0.01em;}
+.course-meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.03em;}
+.term{display:grid;grid-template-columns:84px 1fr;gap:28px;padding:11px 0;}
+.term-year{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:4px;}
+
+/* Contact */
+.section-contact{background:var(--deep);color:#EDEFEA;}
+.contact-head{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:-0.02em;color:#FCFDFB;line-height:1.05;margin-bottom:18px;}
+.contact-lead{font-size:18px;color:#C9D2CC;max-width:42ch;margin-bottom:30px;}
+.contact-email{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);
+  color:#FCFDFB;border-bottom:1px solid var(--line-dark);padding-bottom:3px;
+  transition:border-color .2s ease,color .2s ease;
+}
+.contact-email:hover{color:var(--accent-soft);border-bottom-color:var(--accent-soft);}
+.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:42px;}
+.socials a{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;
+  color:#C9D2CC;border:1px solid var(--line-dark);border-radius:2px;
+  padding:10px 15px;transition:all .18s ease;
+}
+.socials a i{font-size:15px;color:var(--accent-soft);transition:color .18s ease;}
+.socials a:hover{border-color:var(--accent-soft);color:#FCFDFB;transform:translateY(-2px);}
+
+/* Footer */
+.foot{background:#0A130F;color:#7E8983;}
+.foot-wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:26px clamp(20px,5vw,56px);font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+
+/* Focus + reduced motion */
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+.hero a:focus-visible,.section-contact a:focus-visible{outline-color:var(--accent-soft);}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  .btn,.chip,.socials a{transition:none;}
+}
+
+/* Responsive */
+@media (max-width:760px){
+  body{font-size:16px;}
+  .hero-grid{grid-template-columns:1fr;gap:36px;padding-top:64px;}
+  .hero-photo{justify-self:start;order:-1;}
+  .hero-photo img{width:148px;height:184px;}
+  .nav-links{gap:18px;}
+  .nav-name{font-size:16px;}
+  .research-grid{grid-template-columns:1fr;gap:30px;}
+  .research-body p{font-size:18px;}
+  .pub,.term{grid-template-columns:54px 1fr;gap:16px;}
+  .affil span{gap:16px;}
+}
+@media (max-width:520px){
+  .nav-links{display:none;}
+}
+</style>
 </head>
 <body>
-    <p>
-        I am Martín Arnaiz Iglesias, a PhD student at the 
-        <a href="https://centredeconomiesorbonne.cnrs.fr/en/home/" target="_blank">Centre d’Économie de la Sorbonne</a> 
-        – a joint research laboratory of 
-        <a href="https://www.cnrs.fr/fr" target="_blank">CNRS</a>, 
-        <a href="https://www.pantheonsorbonne.fr" target="_blank">Université Paris 1 Panthéon-Sorbonne</a>, 
-        and <a href="https://www.ird.fr" target="_blank">IRD</a>. 
-        I am part of the 
-        <a href="https://centredeconomiesorbonne.cnrs.fr/en/portfolio/financial-modelling/" target="_blank">Financial Modelling</a> 
-        team, and my research focuses on stochastic approximation schemes in finance, particularly their applications to risk budgeting and other financial processes. 
-        My thesis is supervised by 
-        <a href="https://scholar.google.fr/citations?user=uW7X31UAAAAJ&hl=en" target="_blank">Noufel Frikha</a>. 
-    </p>
-     <section>
-        <h2>Publications</h2>
-        <ul>
-            <li>
-                <strong>Mirror Descent Algorithms for Risk Budgeting Portfolios.</strong> 
-                <span>Martín Arnaiz Iglesias, Adil Rengim Cetingoz, Noufel Frikha.</span> 
-                 2024. <a href="https://arxiv.org/abs/2411.12323" target="_blank"> arXiv </a> <a href="https://hal.science/hal-04787053" target="_blank"> Hal </a> <a href="https://github.com/martinarnaiziglesias/mirror_descent_rb.git" target="_blank"> Code </a>.
-            </li>
-        </ul>
-    </section>
-</body>
-</html> 
+
+<nav class="nav">
+  <div class="wrap nav-wrap">
+    <a class="nav-name" href="#top">Martín Arnaiz Iglesias</a>
+    <div class="nav-links">
+      <a href="#research">research</a>
+      <a href="#publications">publications</a>
+      <a href="#teaching">teaching</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-main reveal">
+      <p class="eyebrow on-dark">PhD candidate · Applied Mathematics &amp; Quantitative Finance</p>
+      <h1 class="hero-name">Martín Arnaiz<br>Iglesias</h1>
+      <p class="hero-sub">Dual PhD &amp; MBA — Science &amp; Management, Collège des Ingénieurs</p>
+      <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to risk budgeting, at the Centre d'Économie de la Sorbonne.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#publications">View publications <i class="fa-solid fa-arrow-down"></i></a>
+        <a class="btn btn-ghost" href="https://sites.google.com/view/martinarnaiz/cv" target="_blank" rel="noopener">Curriculum vitae <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <img src="{{ '/foto.jpg' | relative_url }}" alt="Portrait of Martín Arnaiz Iglesias">
+    </div>
+  </div>
+  <div class="affil">
+    <span>Centre d'Économie de la Sorbonne</span>
+    <span>CNRS</span>
+    <span>Université Paris 1 Panthéon-Sorbonne</span>
+    <span>IRD</span>
+    <span>Collège des Ingénieurs</span>
+  </div>
+</header>
+
+<section class="section" id="research">
+  <div class="wrap reveal">
+    <p class="eyebrow">Research</p>
+    <div class="research-grid">
+      <div class="research-body">
+        <p>I am a PhD student at the <a href="https://centredeconomiesorbonne.cnrs.fr/en/home/" target="_blank" rel="noopener">Centre d'Économie de la Sorbonne</a> — a joint research laboratory of <a href="https://www.cnrs.fr/fr" target="_blank" rel="noopener">CNRS</a>, <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1 Panthéon-Sorbonne</a> and <a href="https://www.ird.fr/" target="_blank" rel="noopener">IRD</a>. I am part of the <a href="https://centredeconomiesorbonne.cnrs.fr/en/portfolio/financial-modelling/" target="_blank" rel="noopener">Financial Modelling</a> team, and my research focuses on stochastic approximation schemes in finance — particularly their applications to risk budgeting and other financial processes. My thesis is supervised by <a href="https://scholar.google.fr/citations?user=uW7X31UAAAAJ&hl=en" target="_blank" rel="noopener">Noufel Frikha</a>.</p>
+      </div>
+      <aside class="research-aside">
+        <p class="aside-label">Beyond the PhD</p>
+        <p>I am also enrolled in the Science and Management Program at the Collège des Ingénieurs, pursuing a dual PhD &amp; MBA. The program pairs research with management training and corporate projects across Paris, Munich and Turin — bridging advanced financial theory with its real-world applications.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="publications">
+  <div class="wrap reveal">
+    <p class="eyebrow">Publications</p>
+    <ol class="pub-list">
+      {% for pub in site.data.publications %}
+      <li class="pub">
+        <div class="pub-year">{{ pub.year }}</div>
+        <div class="pub-main">
+          <h3 class="pub-title">{{ pub.title }}</h3>
+          <p class="pub-authors">{{ pub.authors | replace: 'Martín Arnaiz Iglesias', '<strong>Martín Arnaiz Iglesias</strong>' }}</p>
+          <div class="pub-links">
+            {% for l in pub.links %}<a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="pub-more">+ more work in progress</p>
+  </div>
+</section>
+
+<section class="section" id="teaching">
+  <div class="wrap reveal">
+    <p class="eyebrow">Teaching</p>
+
+    <div class="course">
+      <div class="course-head">
+        <h3 class="course-title">Fondements des mathématiques</h3>
+        <span class="course-meta">L1 MIASHS · Université Paris 1</span>
+      </div>
+      <div class="term">
+        <span class="term-year">2024</span>
+        <div class="mat">
+          <a class="chip" href="https://drive.google.com/file/d/1QWDixpKhrkhSSZ11u_Wbd-MzVAJhajGr/view" target="_blank" rel="noopener">Cours</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Gfe_7FY7MZFZqtHqttKJfjj893ZIpzxT/view" target="_blank" rel="noopener">Livret TD</a>
+          <a class="chip" href="https://drive.google.com/file/d/1A74lDSel_r904gsPE45OBu2lQIHPnC1c/view" target="_blank" rel="noopener">TD6</a>
+          <a class="chip" href="https://drive.google.com/file/d/1E4bkTjvDWPUE9KzU_fjSCmwr3aJKE-PN/view" target="_blank" rel="noopener">TD7</a>
+          <a class="chip" href="https://drive.google.com/file/d/1_p4swRHjlV2yZVy9Ov8msDg2ebf4l6P7/view" target="_blank" rel="noopener">TD8</a>
+          <a class="chip" href="https://drive.google.com/file/d/1E8NXRHEV0z6Mpbtk2GR2rkVnouVpuvg4/view" target="_blank" rel="noopener">TD9</a>
+          <a class="chip" href="https://drive.google.com/file/d/1kzB8yxDsKUFHwb3mogeK_5_LAp6XRLNR/view" target="_blank" rel="noopener">TD10</a>
+          <a class="chip" href="https://drive.google.com/file/d/1S-HAHIPcpzTgmyzV3wACFc47c-ez2E74/view" target="_blank" rel="noopener">Interro 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1OiUf8WsPNJ57bfclydChbDGNRtH3YNX0/view" target="_blank" rel="noopener">Interro 1 — corrigé</a>
+        </div>
+      </div>
+      <div class="term">
+        <span class="term-year">2025</span>
+        <div class="mat">
+          <a class="chip" href="https://drive.google.com/file/d/16U63iMjScBaZv-x0ZGljYawNilVv5NdI/view" target="_blank" rel="noopener">TD9</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="course">
+      <div class="course-head">
+        <h3 class="course-title">Modèles mathématiques en finance</h3>
+        <span class="course-meta">L3 MIASHS · Université Paris 1</span>
+      </div>
+      <div class="term">
+        <span class="term-year">Course</span>
+        <div class="mat">
+          <a class="chip" href="https://drive.google.com/open?id=1sP2Duhl0-L5-EV58HfSJ5TDGOxQSUHxp" target="_blank" rel="noopener">Cours</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Gfe_7FY7MZFZqtHqttKJfjj893ZIpzxT/view" target="_blank" rel="noopener">Livret TD</a>
+          <a class="chip" href="https://drive.google.com/file/d/1hpWB9bY4qCK1xtt3M6vSaZDHG7vbg0Hf/view" target="_blank" rel="noopener">TD5</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-contact" id="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow on-dark">Contact</p>
+    <h2 class="contact-head">Let's get in touch</h2>
+    <p class="contact-lead">For research, teaching or collaboration, feel free to reach out.</p>
+    <a class="contact-email" href="mailto:martin.arnaiz.iglesias@gmail.com">martin.arnaiz.iglesias@gmail.com</a>
+    <div class="socials">
+      <a href="https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
+      <a href="https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
+      <a href="https://orcid.org/0009-0002-3088-9157" target="_blank" rel="noopener"><i class="fa-brands fa-orcid"></i> ORCID</a>
+      <a href="https://github.com/martinarnaiziglesias" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/martin-arnaiz-iglesias/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-wrap">
+    <span>© 2026 Martín Arnaiz Iglesias</span>
+    <span>Built with Jekyll · Paris</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    return;
+  }
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>
