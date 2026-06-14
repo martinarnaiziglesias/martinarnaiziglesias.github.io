@@ -9,7 +9,7 @@ title: Martín Arnaiz Iglesias
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Martín Arnaiz Iglesias — PhD in Applied Mathematics & Quantitative Finance</title>
-<meta name="description" content="Martín Arnaiz Iglesias — PhD student in Applied Mathematics and Quantitative Finance at the Centre d'Économie de la Sorbonne. Research on stochastic approximation schemes in finance and risk budgeting.">
+<meta name="description" content="Martín Arnaiz Iglesias — PhD student in Applied Mathematics and Quantitative Finance at the Centre d'Économie de la Sorbonne. Dual PhD & MBA, Collège des Ingénieurs. Research on stochastic approximation schemes in finance and risk budgeting.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,9 @@ title: Martín Arnaiz Iglesias
   --ink:#15191A;
   --deep:#0E1A15;          /* dark green-black band (hero + contact) */
   --accent:#147A5C;        /* emerald accent on light backgrounds */
+  --accent-dark:#0E5C45;
   --accent-soft:#8FDCC1;   /* mint accent on dark backgrounds */
+  --accent-tint:#EAF6F0;   /* mint card background */
   --muted:#5E6A64;
   --line:#E3E6E2;
   --line-dark:rgba(255,255,255,0.16);
@@ -75,9 +77,9 @@ img{display:block;max-width:100%;}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
 .nav-name{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;}
 .nav-name:hover{color:var(--accent);}
-.nav-links{display:flex;gap:30px;}
+.nav-links{display:flex;gap:26px;}
 .nav-links a{
-  font-family:var(--mono);font-size:12.5px;letter-spacing:0.06em;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;
   color:var(--muted);text-transform:lowercase;
 }
 .nav-links a:hover{color:var(--ink);}
@@ -96,12 +98,19 @@ img{display:block;max-width:100%;}
   line-height:1.0;
   letter-spacing:-0.022em;
   color:#FCFDFB;
-  margin:6px 0 18px;
+  margin:6px 0 20px;
 }
-.hero-sub{
-  font-family:var(--mono);font-size:13.5px;letter-spacing:0.02em;
-  color:var(--accent-soft);margin-bottom:26px;
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:13px;letter-spacing:0.02em;
+  color:var(--accent-soft);
+  background:rgba(143,220,193,0.10);
+  border:1px solid rgba(143,220,193,0.42);
+  border-radius:2px;
+  padding:10px 16px;
+  margin-bottom:26px;
 }
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-soft);flex-shrink:0;}
 .hero-lead{
   font-size:18.5px;line-height:1.6;max-width:46ch;
   color:#C9D2CC;margin-bottom:34px;
@@ -149,23 +158,26 @@ img{display:block;max-width:100%;}
 .research-body a{border-bottom:1px solid rgba(20,122,92,0.3);}
 .research-body a:hover{border-bottom-color:var(--accent);}
 .research-aside{
-  background:var(--bg);border:1px solid var(--line);border-radius:4px;
+  background:var(--accent-tint);
+  border:1px solid rgba(20,122,92,0.22);
+  border-radius:4px;
   padding:26px 28px;
 }
-.section-alt .research-aside{background:#FAFBF9;}
-.aside-label{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:14px;
+.aside-badge{
+  display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:4px 10px;margin-bottom:16px;
 }
-.research-aside p{font-size:15.5px;line-height:1.6;color:var(--muted);}
+.aside-title{font-family:var(--serif);font-size:1.32rem;font-weight:600;line-height:1.18;color:var(--ink);margin-bottom:4px;}
+.aside-org{font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:var(--accent);margin-bottom:16px;}
+.aside-text{font-size:14.5px;line-height:1.6;color:#3F4A45;}
 
-/* Publications */
+/* Publications + working papers */
 .pub-list{list-style:none;}
 .pub{
   display:grid;grid-template-columns:84px 1fr;gap:28px;
   padding:30px 0;border-top:1px solid var(--line);
 }
-.pub:last-of-type{border-bottom:1px solid var(--line);}
+.pub-list .pub:last-child{border-bottom:1px solid var(--line);}
 .pub-year{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:5px;}
 .pub-title{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.72rem);font-weight:500;line-height:1.22;letter-spacing:-0.01em;margin-bottom:9px;}
 .pub-authors{font-size:15.5px;color:var(--muted);margin-bottom:16px;}
@@ -179,7 +191,20 @@ img{display:block;max-width:100%;}
 }
 .section-alt .chip{background:var(--bg);}
 .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+.pub-subhead{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:42px 0 2px;}
+.wp-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:4px 8px;}
+.pub-status{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.02em;}
 .pub-more{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:24px;letter-spacing:0.02em;}
+
+/* Talks */
+.talk-list{list-style:none;}
+.talk{display:grid;grid-template-columns:118px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line);}
+.talk-list .talk:last-child{border-bottom:1px solid var(--line);}
+.talk-meta{padding-top:4px;display:flex;flex-direction:column;gap:9px;align-items:flex-start;}
+.talk-date{font-family:var(--mono);font-size:13px;color:var(--muted);}
+.talk-flag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:3px 8px;}
+.talk-title{font-family:var(--serif);font-size:clamp(1.25rem,2.1vw,1.5rem);font-weight:500;line-height:1.24;letter-spacing:-0.01em;margin-bottom:8px;}
+.talk-where{font-size:15px;color:var(--muted);line-height:1.55;}
 
 /* Teaching */
 .course{padding:30px 0;border-top:1px solid var(--line);}
@@ -233,12 +258,13 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
   .hero-grid{grid-template-columns:1fr;gap:36px;padding-top:64px;}
   .hero-photo{justify-self:start;order:-1;}
   .hero-photo img{width:148px;height:184px;}
-  .nav-links{gap:18px;}
+  .nav-links{gap:16px;}
   .nav-name{font-size:16px;}
   .research-grid{grid-template-columns:1fr;gap:30px;}
   .research-body p{font-size:18px;}
   .pub,.term{grid-template-columns:54px 1fr;gap:16px;}
-  .affil span{gap:16px;}
+  .talk{grid-template-columns:1fr;gap:8px;}
+  .talk-meta{flex-direction:row;align-items:center;gap:10px;}
 }
 @media (max-width:520px){
   .nav-links{display:none;}
@@ -253,6 +279,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
     <div class="nav-links">
       <a href="#research">research</a>
       <a href="#publications">publications</a>
+      <a href="#talks">talks</a>
       <a href="#teaching">teaching</a>
       <a href="#contact">contact</a>
     </div>
@@ -264,11 +291,11 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
     <div class="hero-main reveal">
       <p class="eyebrow on-dark">PhD candidate · Applied Mathematics &amp; Quantitative Finance</p>
       <h1 class="hero-name">Martín Arnaiz<br>Iglesias</h1>
-      <p class="hero-sub">Dual PhD &amp; MBA — Science &amp; Management, Collège des Ingénieurs</p>
+      <div class="hero-badge"><span class="dot"></span>Science &amp; Management — Dual PhD &amp; MBA · Collège des Ingénieurs</div>
       <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to risk budgeting, at the Centre d'Économie de la Sorbonne.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="#publications">View publications <i class="fa-solid fa-arrow-down"></i></a>
-        <a class="btn btn-ghost" href="https://sites.google.com/view/martinarnaiz/cv" target="_blank" rel="noopener">Curriculum vitae <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a class="btn btn-ghost" href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">Curriculum vitae <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
     </div>
     <div class="hero-photo reveal">
@@ -292,8 +319,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
         <p>I am a PhD student at the <a href="https://centredeconomiesorbonne.cnrs.fr/en/home/" target="_blank" rel="noopener">Centre d'Économie de la Sorbonne</a> — a joint research laboratory of <a href="https://www.cnrs.fr/fr" target="_blank" rel="noopener">CNRS</a>, <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1 Panthéon-Sorbonne</a> and <a href="https://www.ird.fr/" target="_blank" rel="noopener">IRD</a>. I am part of the <a href="https://centredeconomiesorbonne.cnrs.fr/en/portfolio/financial-modelling/" target="_blank" rel="noopener">Financial Modelling</a> team, and my research focuses on stochastic approximation schemes in finance — particularly their applications to risk budgeting and other financial processes. My thesis is supervised by <a href="https://scholar.google.fr/citations?user=uW7X31UAAAAJ&hl=en" target="_blank" rel="noopener">Noufel Frikha</a>.</p>
       </div>
       <aside class="research-aside">
-        <p class="aside-label">Beyond the PhD</p>
-        <p>I am also enrolled in the Science and Management Program at the Collège des Ingénieurs, pursuing a dual PhD &amp; MBA. The program pairs research with management training and corporate projects across Paris, Munich and Turin — bridging advanced financial theory with its real-world applications.</p>
+        <p class="aside-badge">Dual degree · selective program</p>
+        <p class="aside-title">Science &amp; Management — PhD &amp; MBA</p>
+        <p class="aside-org">Collège des Ingénieurs</p>
+        <p class="aside-text">A highly selective program pairing doctoral research with management training and corporate projects across Paris, Munich and Turin — bridging advanced financial theory with its real-world applications.</p>
       </aside>
     </div>
   </div>
@@ -303,7 +332,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
   <div class="wrap reveal">
     <p class="eyebrow">Publications</p>
     <ol class="pub-list">
-      {% for pub in site.data.publications %}
+      {% for pub in site.data.publications.published %}
       <li class="pub">
         <div class="pub-year">{{ pub.year }}</div>
         <div class="pub-main">
@@ -316,11 +345,62 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
       </li>
       {% endfor %}
     </ol>
-    <p class="pub-more">+ more work in progress</p>
+
+    {% if site.data.publications.working %}
+    <p class="pub-subhead">Working papers</p>
+    <ol class="pub-list">
+      {% for pub in site.data.publications.working %}
+      <li class="pub">
+        <div class="pub-year"><span class="wp-tag">WP</span></div>
+        <div class="pub-main">
+          <h3 class="pub-title">{{ pub.title }}</h3>
+          <p class="pub-authors">{{ pub.authors | replace: 'Martín Arnaiz Iglesias', '<strong>Martín Arnaiz Iglesias</strong>' }}</p>
+          {% if pub.links %}<div class="pub-links">{% for l in pub.links %}<a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}</div>{% else %}<p class="pub-status">In preparation</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
   </div>
 </section>
 
-<section class="section" id="teaching">
+<section class="section" id="talks">
+  <div class="wrap reveal">
+    <p class="eyebrow">Talks</p>
+    <ol class="talk-list">
+      <li class="talk">
+        <div class="talk-meta">
+          <span class="talk-date">Jun 2026</span>
+          <span class="talk-flag">Upcoming</span>
+        </div>
+        <div class="talk-main">
+          <h3 class="talk-title">XIII Bachelier World Congress</h3>
+          <p class="talk-where">Bachelier Finance Society · University of Bologna, Italy · 29 June – 3 July 2026</p>
+        </div>
+      </li>
+      <li class="talk">
+        <div class="talk-meta">
+          <span class="talk-date">Sep 2025</span>
+        </div>
+        <div class="talk-main">
+          <h3 class="talk-title">Stochastics &amp; Computational Finance</h3>
+          <p class="talk-where">New Trends from Academia to Real-World Applications · Lisbon, Portugal · 2–5 September 2025</p>
+        </div>
+      </li>
+      <li class="talk">
+        <div class="talk-meta">
+          <span class="talk-date">Mar 2025</span>
+        </div>
+        <div class="talk-main">
+          <h3 class="talk-title">Financial Risks International Forum</h3>
+          <p class="talk-where">18th edition · Institut Louis Bachelier · Paris (CCI Paris Île-de-France) · 17–18 March 2025</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt" id="teaching">
   <div class="wrap reveal">
     <p class="eyebrow">Teaching</p>
 
