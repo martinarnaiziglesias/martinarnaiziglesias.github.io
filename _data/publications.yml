@@ -1,0 +1,34 @@
+# ============================================================
+#  Your publications live here, in two groups: "published"
+#  and "working" (papers in progress).
+#
+#  To add a paper, copy one block (from the dash "-" down to
+#  its last "url") into the right group and fill it in. Keep
+#  the spacing exactly as shown — the homepage updates itself.
+#  Your name is bolded automatically wherever it appears.
+#  "venue" is optional (the journal line). Working papers
+#  without links show "In preparation".
+# ============================================================
+
+published:
+  - title: "Mirror Descent Algorithms for Risk Budgeting Portfolios"
+    authors: "Martín Arnaiz Iglesias, Adil Rengim Cetingoz, Noufel Frikha"
+    venue: "Mathematics of Operations Research · INFORMS"
+    year: 2026
+    links:
+      - label: "Journal"
+        url: "https://pubsonline.informs.org/doi/10.1287/moor.2024.0847"
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/2411.12323"
+      - label: "HAL"
+        url: "https://hal.science/hal-04787053"
+      - label: "Code"
+        url: "https://github.com/martinarnaiziglesias/mirror_descent_rb"
+
+working:
+  - title: "Robust Mirror Descent Algorithms for Risk Management"
+    authors: "Martín Arnaiz Iglesias, Noufel Frikha"
+    # Add links here once it's public, e.g.:
+    # links:
+    #   - label: "arXiv"
+    #     url: "https://arxiv.org/abs/..."
