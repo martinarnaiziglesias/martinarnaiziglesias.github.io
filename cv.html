@@ -1,0 +1,266 @@
+---
+title: CV — Martín Arnaiz Iglesias
+permalink: /cv/
+# Self-contained CV page. Does not use the Minimal Mistakes layout.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum Vitae — Martín Arnaiz Iglesias</title>
+<meta name="description" content="Curriculum Vitae of Martín Arnaiz Iglesias — work experience, education, awards and languages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>(function(){try{var t=localStorage.getItem('theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<style>
+:root{
+  --bg:#F6F7F5; --surface:#FFFFFF; --deep:#0E1A15;
+  --ink:#15191A; --muted:#5E6A64; --line:#E3E6E2;
+  --accent:#147A5C; --accent-soft:#8FDCC1;
+  --accent-tint:#EAF6F0; --tint-bg:rgba(20,122,92,0.12); --tint-text:#0E5C45;
+  --nav-bg:rgba(246,247,245,0.82);
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --maxw:1000px;
+}
+[data-theme="dark"]{
+  --bg:#0E1A15; --surface:#16221C; --deep:#0A130F;
+  --ink:#E7EAE5; --muted:#95A19A; --line:#26312B;
+  --accent:#4FC79C; --accent-soft:#8FDCC1;
+  --accent-tint:rgba(79,199,156,0.10); --tint-bg:rgba(79,199,156,0.16); --tint-text:#A7E6CC;
+  --nav-bg:rgba(14,26,21,0.82);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background .3s ease,color .3s ease;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+a{color:var(--accent);text-decoration:none;transition:color .18s ease;}
+
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:26px;}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block;}
+
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);transition:background .3s ease,border-color .3s ease;}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-name{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;}
+.nav-name:hover{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;color:var(--muted);text-transform:lowercase;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--accent);}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--line);border-radius:3px;height:32px;width:32px;color:var(--muted);cursor:pointer;transition:all .18s ease;}
+.icon-btn:hover{color:var(--ink);border-color:var(--accent);}
+
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;padding:12px 20px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;}
+.btn i{font-size:11px;}
+.btn-solid{background:var(--accent);color:#FCFDFB;border:1px solid var(--accent);}
+.btn-solid:hover{background:#10674E;border-color:#10674E;color:#FCFDFB;transform:translateY(-2px);}
+.btn-line{background:transparent;color:var(--ink);border:1px solid var(--line);}
+.btn-line:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+
+.cv-head{padding:clamp(48px,7vw,84px) 0 clamp(30px,4vw,44px);}
+.cv-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.02;letter-spacing:-0.022em;margin:4px 0 14px;}
+.cv-sub{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:30px;}
+.cv-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+.section{padding:clamp(40px,5vw,58px) 0;border-top:1px solid var(--line);}
+.cv-entry{display:grid;grid-template-columns:140px 1fr;gap:28px;padding:22px 0;}
+.cv-entry + .cv-entry{border-top:1px solid var(--line);}
+.cv-when{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:5px;letter-spacing:0.02em;}
+.cv-role{font-family:var(--serif);font-size:1.32rem;font-weight:600;line-height:1.22;letter-spacing:-0.01em;margin-bottom:3px;}
+.cv-place{font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:var(--muted);margin-bottom:11px;}
+.cv-desc{font-size:15.5px;line-height:1.62;color:var(--muted);}
+
+.awards{list-style:none;display:grid;gap:12px;}
+.awards li{display:flex;gap:13px;align-items:flex-start;font-size:16px;color:var(--ink);}
+.awards li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:9px;}
+
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px 28px;}
+.lang{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line);}
+.lang-name{font-family:var(--serif);font-size:1.18rem;color:var(--ink);}
+.lang-level{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:4px 9px;white-space:nowrap;}
+
+.foot{background:#0A130F;color:#7E8983;margin-top:clamp(40px,5vw,58px);}
+.foot-wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:26px clamp(20px,5vw,56px);font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;}
+.foot-wrap a{color:var(--accent-soft);}
+
+.to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#FCFDFB;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:40;box-shadow:0 6px 18px rgba(0,0,0,0.22);}
+.to-top.show{opacity:1;visibility:visible;transform:none;}
+.to-top:hover{transform:translateY(-2px);}
+
+a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.btn,.to-top{transition:none;}}
+@media (max-width:680px){
+  body{font-size:16px;}
+  .nav-links{gap:14px;}
+  .nav-name{font-size:16px;}
+  .cv-entry{grid-template-columns:1fr;gap:8px;}
+}
+@media (max-width:480px){.nav-links a:not(.active){display:none;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-wrap">
+    <a class="nav-name" href="/">Martín Arnaiz Iglesias</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/#research">research</a>
+        <a href="/#publications">publications</a>
+        <a href="/#talks">talks</a>
+        <a href="/#teaching">teaching</a>
+        <a href="/cv/" class="active">cv</a>
+        <a href="/#contact">contact</a>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+
+<header class="cv-head">
+  <div class="wrap">
+    <p class="eyebrow">Curriculum Vitae</p>
+    <h1 class="cv-name">Martín Arnaiz Iglesias</h1>
+    <p class="cv-sub">PhD candidate in Applied Mathematics &amp; Quantitative Finance · Dual PhD &amp; MBA, Collège des Ingénieurs · Centre d'Économie de la Sorbonne.</p>
+    <div class="cv-actions">
+      <a class="btn btn-solid" href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">Download PDF <i class="fa-solid fa-download"></i></a>
+      <a class="btn btn-line" href="/"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Work experience</p>
+    <div class="cv-entry">
+      <div class="cv-when">2024 – Present</div>
+      <div class="cv-what">
+        <h3 class="cv-role">Quantitative Researcher (PhD student)</h3>
+        <p class="cv-place">Centre d'Économie de la Sorbonne</p>
+        <p class="cv-desc">Stochastic approximation schemes in finance, particularly their applications to risk budgeting and other financial processes. Supervised by Noufel Frikha.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">2024 – Present</div>
+      <div class="cv-what">
+        <h3 class="cv-role">Teaching Assistant</h3>
+        <p class="cv-place">Université Paris 1 Panthéon-Sorbonne</p>
+        <p class="cv-desc">Teaching seminars and practical classes in Fundamentals of Mathematics.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">2024</div>
+      <div class="cv-what">
+        <h3 class="cv-role">Financial Analyst</h3>
+        <p class="cv-place">Tallunion SL</p>
+        <p class="cv-desc">Conducted profitability analysis of products and services. Managed cash flow and assisted with budget tracking. Optimized costs in logistics and inventory management. Prepared financial reports to support strategic decisions.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">2021</div>
+      <div class="cv-what">
+        <h3 class="cv-role">Research Assistant</h3>
+        <p class="cv-place">Epidemiology &amp; Clinical Research Service · Santiago University Clinical Hospital (CHUS)</p>
+        <p class="cv-desc">Analysis of databases for the evaluation of treatment efficacy. Support in health research through statistics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Education</p>
+    <div class="cv-entry">
+      <div class="cv-when">2024 – Present</div>
+      <div class="cv-what">
+        <h3 class="cv-role">MBA — Collège des Ingénieurs</h3>
+        <p class="cv-place">Science &amp; Management · PhD &amp; MBA program</p>
+        <p class="cv-desc">Rigorous academic research combined with practical management training and corporate projects across Paris, Munich and Turin. Focus on leadership, entrepreneurship and strategic decision-making.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">2024 – Present</div>
+      <div class="cv-what">
+        <h3 class="cv-role">PhD in Applied Mathematics</h3>
+        <p class="cv-place">Centre d'Économie de la Sorbonne</p>
+        <p class="cv-desc">Stochastic approximation schemes in finance, particularly their applications to risk budgeting and other financial processes. Supervised by Noufel Frikha.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">2022 – 2024</div>
+      <div class="cv-what">
+        <h3 class="cv-role">MSc Quantitative Economic Methods (QEM)</h3>
+        <p class="cv-place">Erasmus Mundus Joint Master Degree · GPA 4/4</p>
+        <p class="cv-desc">A joint master among Université Paris 1 Panthéon-Sorbonne, UCLouvain, Universitat Autònoma de Barcelona, Università Ca' Foscari and the Warsaw School of Economics. Track: Università Ca' Foscari (2022); Université Paris 1 Panthéon-Sorbonne — M1 MMEF &amp; M2 MMMEF, quantitative finance (2023–2024). Stochastic calculus, machine learning, algorithmic trading, portfolio choice, asset pricing, Monte Carlo methods, econometrics, Hawkes processes, macro- and microeconomics, risk measures.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">2018 – 2022</div>
+      <div class="cv-what">
+        <h3 class="cv-role">BSc in Mathematics</h3>
+        <p class="cv-place">Universidade de Santiago de Compostela · Grade 8.5/10</p>
+        <p class="cv-desc">With exchanges at Maria Curie-Skłodowska University and Universidad de Sevilla. Statistics, algebra, ODEs, PDEs, mathematical analysis, modelling, geometry, topology and game theory.</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-when">High school</div>
+      <div class="cv-what">
+        <h3 class="cv-role">Colexio Manuel Peleteiro</h3>
+        <p class="cv-place">Santiago de Compostela</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Awards &amp; distinctions</p>
+    <ul class="awards">
+      <li>Bronze medal — Galician Economic Olympiad.</li>
+      <li>Galician Academic Excellence Award, 2020–2021.</li>
+      <li>Erasmus Mundus Scholarship.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Languages</p>
+    <div class="langs">
+      <div class="lang"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
+      <div class="lang"><span class="lang-name">Galician</span><span class="lang-level">Native</span></div>
+      <div class="lang"><span class="lang-name">English</span><span class="lang-level">C1 · Cambridge</span></div>
+      <div class="lang"><span class="lang-name">Italian</span><span class="lang-level">C1</span></div>
+      <div class="lang"><span class="lang-name">French</span><span class="lang-level">C1</span></div>
+      <div class="lang"><span class="lang-name">German</span><span class="lang-level">A2</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-wrap">
+    <span>© 2026 Martín Arnaiz Iglesias</span>
+    <span><a href="/">martinarnaiziglesias.github.io</a></span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+(function(){
+  var root=document.documentElement,themeBtn=document.getElementById('themeBtn');
+  function themeIcon(){var i=themeBtn&&themeBtn.querySelector('i');if(i)i.className=root.getAttribute('data-theme')==='dark'?'fa-solid fa-sun':'fa-solid fa-moon';}
+  function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}themeIcon();}
+  themeIcon();
+  if(themeBtn)themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+  var toTop=document.getElementById('toTop');
+  if(toTop){window.addEventListener('scroll',function(){toTop.classList.toggle('show',window.scrollY>500);},{passive:true});toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+})();
+</script>
+</body>
+</html>
