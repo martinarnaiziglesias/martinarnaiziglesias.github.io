@@ -1,7 +1,7 @@
 ---
 title: Martín Arnaiz Iglesias
-# This page is fully self-contained and does NOT use the Minimal Mistakes layout.
-# Publications are read from _data/publications.yml — edit that file to add papers.
+# Self-contained homepage — does NOT use the Minimal Mistakes layout.
+# Publications come from _data/publications.yml.
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,207 +9,124 @@ title: Martín Arnaiz Iglesias
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Martín Arnaiz Iglesias — PhD in Applied Mathematics & Quantitative Finance</title>
-<meta name="description" content="Martín Arnaiz Iglesias — PhD student in Applied Mathematics and Quantitative Finance at the Centre d'Économie de la Sorbonne. Dual PhD & MBA, Collège des Ingénieurs. Research on stochastic approximation schemes in finance and risk budgeting.">
-
+<meta name="description" content="Martín Arnaiz Iglesias — PhD student in Applied Mathematics and Quantitative Finance at the Centre d'Économie de la Sorbonne. Dual PhD & MBA, Collège des Ingénieurs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+<script>(function(){try{var t=localStorage.getItem('theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <style>
-/* ---- Design tokens. Change --accent to recolor the whole site. ---- */
 :root{
-  --bg:#F6F7F5;
-  --surface:#FFFFFF;
-  --ink:#15191A;
-  --deep:#0E1A15;          /* dark green-black band (hero + contact) */
-  --accent:#147A5C;        /* emerald accent on light backgrounds */
-  --accent-dark:#0E5C45;
-  --accent-soft:#8FDCC1;   /* mint accent on dark backgrounds */
-  --accent-tint:#EAF6F0;   /* mint card background */
-  --muted:#5E6A64;
-  --line:#E3E6E2;
-  --line-dark:rgba(255,255,255,0.16);
+  --bg:#F6F7F5; --surface:#FFFFFF; --deep:#0E1A15;
+  --ink:#15191A; --muted:#5E6A64; --line:#E3E6E2;
+  --accent:#147A5C; --accent-soft:#8FDCC1;
+  --accent-tint:#EAF6F0; --aside-border:rgba(20,122,92,0.22);
+  --tint-bg:rgba(20,122,92,0.12); --tint-text:#0E5C45;
+  --nav-bg:rgba(246,247,245,0.82);
   --serif:'Newsreader',Georgia,'Times New Roman',serif;
   --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
   --maxw:1120px;
 }
-
+[data-theme="dark"]{
+  --bg:#0E1A15; --surface:#16221C; --deep:#0A130F;
+  --ink:#E7EAE5; --muted:#95A19A; --line:#26312B;
+  --accent:#4FC79C; --accent-soft:#8FDCC1;
+  --accent-tint:rgba(79,199,156,0.10); --aside-border:rgba(79,199,156,0.26);
+  --tint-bg:rgba(79,199,156,0.16); --tint-text:#A7E6CC;
+  --nav-bg:rgba(14,26,21,0.82);
+}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--sans);
-  font-size:17px;
-  line-height:1.65;
-  font-weight:400;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background .3s ease,color .3s ease;}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px);}
 a{color:var(--accent);text-decoration:none;transition:color .18s ease;}
 img{display:block;max-width:100%;}
 
-/* ---- Eyebrow label (mono, the structural signature) ---- */
-.eyebrow{
-  font-family:var(--mono);
-  font-size:12px;
-  font-weight:500;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--accent);
-  display:flex;align-items:center;gap:12px;
-  margin-bottom:26px;
-}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:26px;}
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block;}
 .eyebrow.on-dark{color:var(--accent-soft);}
 .eyebrow.on-dark::before{background:var(--accent-soft);}
 
-/* ---- Nav ---- */
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(246,247,245,0.82);
-  backdrop-filter:saturate(180%) blur(10px);
-  border-bottom:1px solid var(--line);
-}
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);transition:background .3s ease,border-color .3s ease;}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
 .nav-name{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;}
 .nav-name:hover{color:var(--accent);}
-.nav-links{display:flex;gap:26px;}
-.nav-links a{
-  font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;
-  color:var(--muted);text-transform:lowercase;
-}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;color:var(--muted);text-transform:lowercase;}
 .nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--accent);}
+.icon-btn{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--line);border-radius:3px;height:32px;padding:0 9px;color:var(--muted);cursor:pointer;font-family:var(--mono);transition:all .18s ease;}
+.icon-btn:hover{color:var(--ink);border-color:var(--accent);}
+.icon-btn .kbd{font-size:10px;letter-spacing:0.04em;}
 
-/* ---- Hero ---- */
+/* Hero */
 .hero{background:var(--deep);color:#EDEFEA;position:relative;overflow:hidden;}
-.hero-grid{
-  display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(32px,6vw,72px);
-  align-items:center;
-  padding:clamp(56px,9vw,108px) 0 clamp(40px,6vw,68px);
-}
-.hero-name{
-  font-family:var(--serif);
-  font-weight:500;
-  font-size:clamp(2.7rem,6.2vw,4.6rem);
-  line-height:1.0;
-  letter-spacing:-0.022em;
-  color:#FCFDFB;
-  margin:6px 0 20px;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--mono);font-size:13px;letter-spacing:0.02em;
-  color:var(--accent-soft);
-  background:rgba(143,220,193,0.10);
-  border:1px solid rgba(143,220,193,0.42);
-  border-radius:2px;
-  padding:10px 16px;
-  margin-bottom:26px;
-}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(56px,9vw,108px) 0 clamp(40px,6vw,68px);}
+.hero-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.7rem,6.2vw,4.6rem);line-height:1.0;letter-spacing:-0.022em;color:#FCFDFB;margin:6px 0 20px;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:0.02em;color:var(--accent-soft);background:rgba(143,220,193,0.10);border:1px solid rgba(143,220,193,0.42);border-radius:2px;padding:10px 16px;margin-bottom:26px;}
 .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-soft);flex-shrink:0;}
-.hero-lead{
-  font-size:18.5px;line-height:1.6;max-width:46ch;
-  color:#C9D2CC;margin-bottom:34px;
-}
+.hero-lead{font-size:18.5px;line-height:1.6;max-width:48ch;color:#C9D2CC;margin-bottom:32px;}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
-.btn{
-  font-family:var(--mono);font-size:13px;letter-spacing:0.04em;
-  padding:13px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;
-  transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;
-}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;padding:13px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;}
 .btn i{font-size:11px;}
 .btn-solid{background:var(--accent);color:#FCFDFB;border:1px solid var(--accent);}
 .btn-solid:hover{background:#10674E;border-color:#10674E;color:#FCFDFB;transform:translateY(-2px);}
-.btn-ghost{background:transparent;color:#EDEFEA;border:1px solid var(--line-dark);}
+.btn-ghost{background:transparent;color:#EDEFEA;border:1px solid rgba(255,255,255,0.16);}
 .btn-ghost:hover{border-color:var(--accent-soft);color:#FCFDFB;transform:translateY(-2px);}
-
+.hero-socials{display:flex;gap:18px;margin-top:26px;}
+.hero-socials a{color:#A9B4AE;font-size:18px;transition:color .18s ease,transform .15s ease;}
+.hero-socials a:hover{color:var(--accent-soft);transform:translateY(-2px);}
 .hero-photo{justify-self:end;}
-.hero-photo img{
-  width:clamp(180px,22vw,272px);height:clamp(220px,27vw,336px);
-  object-fit:cover;border-radius:3px;
-  border:1px solid var(--line-dark);
-  filter:grayscale(8%);
-}
+.hero-photo img{width:clamp(180px,22vw,272px);height:clamp(220px,27vw,336px);object-fit:cover;border-radius:3px;border:1px solid rgba(255,255,255,0.16);filter:grayscale(8%);}
 
-/* ---- Affiliation strip (real, replaces vanity metrics) ---- */
-.affil{
-  border-top:1px solid var(--line-dark);
-  display:flex;flex-wrap:wrap;gap:10px 26px;
-  padding:20px clamp(20px,5vw,56px);
-  max-width:var(--maxw);margin:0 auto;
-}
-.affil span{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;
-  color:#8C968F;display:flex;align-items:center;gap:26px;
-}
+.affil{border-top:1px solid rgba(255,255,255,0.16);display:flex;flex-wrap:wrap;gap:10px 26px;padding:20px clamp(20px,5vw,56px);max-width:var(--maxw);margin:0 auto;}
+.affil span{font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;color:#8C968F;display:flex;align-items:center;gap:26px;}
 .affil span:not(:last-child)::after{content:"";width:4px;height:4px;border-radius:50%;background:#3A4640;}
 
-/* ---- Sections ---- */
 .section{padding:clamp(64px,9vw,118px) 0;}
-.section-alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.section-alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s ease,border-color .3s ease;}
 
-/* Research */
 .research-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(28px,5vw,64px);align-items:start;}
 .research-body p{font-size:20px;line-height:1.62;color:var(--ink);}
-.research-body a{border-bottom:1px solid rgba(20,122,92,0.3);}
+.research-body a{border-bottom:1px solid var(--aside-border);}
 .research-body a:hover{border-bottom-color:var(--accent);}
-.research-aside{
-  background:var(--accent-tint);
-  border:1px solid rgba(20,122,92,0.22);
-  border-radius:4px;
-  padding:26px 28px;
-}
-.aside-badge{
-  display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;
-  color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:4px 10px;margin-bottom:16px;
-}
+.research-aside{background:var(--accent-tint);border:1px solid var(--aside-border);border-radius:4px;padding:26px 28px;}
+.aside-badge{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:4px 10px;margin-bottom:16px;}
 .aside-title{font-family:var(--serif);font-size:1.32rem;font-weight:600;line-height:1.18;color:var(--ink);margin-bottom:4px;}
 .aside-org{font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:var(--accent);margin-bottom:16px;}
-.aside-text{font-size:14.5px;line-height:1.6;color:#3F4A45;}
+.aside-text{font-size:14.5px;line-height:1.6;color:var(--muted);}
 
-/* Publications + working papers */
 .pub-list{list-style:none;}
-.pub{
-  display:grid;grid-template-columns:84px 1fr;gap:28px;
-  padding:30px 0;border-top:1px solid var(--line);
-}
+.pub{display:grid;grid-template-columns:84px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);}
 .pub-list .pub:last-child{border-bottom:1px solid var(--line);}
 .pub-year{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:5px;}
 .pub-title{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.72rem);font-weight:500;line-height:1.22;letter-spacing:-0.01em;margin-bottom:9px;}
 .pub-authors{font-size:15.5px;color:var(--muted);margin-bottom:16px;}
 .pub-authors strong{color:var(--ink);font-weight:600;}
 .pub-venue{font-family:var(--mono);font-size:12.5px;letter-spacing:0.02em;color:var(--accent);margin-bottom:9px;}
-.pub-links,.mat{display:flex;flex-wrap:wrap;gap:9px;}
-.chip{
-  font-family:var(--mono);font-size:12px;letter-spacing:0.03em;
-  padding:6px 13px;border:1px solid var(--line);border-radius:2px;
-  color:var(--muted);background:var(--surface);
-  transition:all .17s ease;
-}
+.pub-links,.mat,.talk-links{display:flex;flex-wrap:wrap;gap:9px;}
+.talk-links{margin-top:11px;}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:0.03em;padding:6px 13px;border:1px solid var(--line);border-radius:2px;color:var(--muted);background:var(--surface);transition:all .17s ease;}
 .section-alt .chip{background:var(--bg);}
 .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
 .pub-subhead{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:42px 0 2px;}
-.wp-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:4px 8px;}
+.wp-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:4px 8px;}
 .pub-status{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.02em;}
-.pub-more{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:24px;letter-spacing:0.02em;}
 
-/* Talks */
 .talk-list{list-style:none;}
 .talk{display:grid;grid-template-columns:118px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line);}
 .talk-list .talk:last-child{border-bottom:1px solid var(--line);}
 .talk-meta{padding-top:4px;display:flex;flex-direction:column;gap:9px;align-items:flex-start;}
 .talk-date{font-family:var(--mono);font-size:13px;color:var(--muted);}
-.talk-flag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:3px 8px;}
+.talk-flag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:3px 8px;}
 .talk-title{font-family:var(--serif);font-size:clamp(1.25rem,2.1vw,1.5rem);font-weight:500;line-height:1.24;letter-spacing:-0.01em;margin-bottom:8px;}
-.talk-where{font-size:15px;color:var(--muted);line-height:1.55;}
 .talk-title a{color:var(--ink);transition:color .18s ease;}
 .talk-title a:hover{color:var(--accent);}
+.talk-where{font-size:15px;color:var(--muted);line-height:1.55;}
 
-/* Teaching */
 .course{padding:30px 0;border-top:1px solid var(--line);}
 .course:last-of-type{border-bottom:1px solid var(--line);}
 .course-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
@@ -218,58 +135,75 @@ img{display:block;max-width:100%;}
 .term{display:grid;grid-template-columns:84px 1fr;gap:28px;padding:11px 0;}
 .term-year{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:4px;}
 
-/* Contact */
 .section-contact{background:var(--deep);color:#EDEFEA;}
 .contact-head{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:-0.02em;color:#FCFDFB;line-height:1.05;margin-bottom:18px;}
 .contact-lead{font-size:18px;color:#C9D2CC;max-width:42ch;margin-bottom:30px;}
-.contact-email{
-  font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);
-  color:#FCFDFB;border-bottom:1px solid var(--line-dark);padding-bottom:3px;
-  transition:border-color .2s ease,color .2s ease;
-}
+.contact-email-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.contact-email{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);color:#FCFDFB;border-bottom:1px solid rgba(255,255,255,0.16);padding-bottom:3px;transition:border-color .2s ease,color .2s ease;}
 .contact-email:hover{color:var(--accent-soft);border-bottom-color:var(--accent-soft);}
+.copy-btn{background:transparent;border:1px solid rgba(255,255,255,0.16);border-radius:3px;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;color:#C9D2CC;cursor:pointer;transition:all .18s ease;}
+.copy-btn:hover{border-color:var(--accent-soft);color:#FCFDFB;}
 .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:42px;}
-.socials a{
-  display:inline-flex;align-items:center;gap:9px;
-  font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;
-  color:#C9D2CC;border:1px solid var(--line-dark);border-radius:2px;
-  padding:10px 15px;transition:all .18s ease;
-}
+.socials a{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:#C9D2CC;border:1px solid rgba(255,255,255,0.16);border-radius:2px;padding:10px 15px;transition:all .18s ease;}
 .socials a i{font-size:15px;color:var(--accent-soft);transition:color .18s ease;}
 .socials a:hover{border-color:var(--accent-soft);color:#FCFDFB;transform:translateY(-2px);}
 
-/* Footer */
 .foot{background:#0A130F;color:#7E8983;}
 .foot-wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:26px clamp(20px,5vw,56px);font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;}
 
-/* Scroll reveal */
+/* Back to top */
+.to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#FCFDFB;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:40;box-shadow:0 6px 18px rgba(0,0,0,0.22);}
+.to-top.show{opacity:1;visibility:visible;transform:none;}
+.to-top:hover{transform:translateY(-2px);}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:12.5px;letter-spacing:0.02em;padding:11px 18px;border-radius:5px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:120;box-shadow:0 8px 24px rgba(0,0,0,0.25);}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%);}
+
+/* Command palette */
+.cmdk{position:fixed;inset:0;z-index:100;display:none;}
+.cmdk.open{display:block;}
+.cmdk-backdrop{position:absolute;inset:0;background:rgba(8,12,10,0.5);backdrop-filter:blur(2px);}
+.cmdk-panel{position:relative;max-width:560px;margin:13vh auto 0;background:var(--surface);border:1px solid var(--line);border-radius:11px;box-shadow:0 24px 70px rgba(0,0,0,0.35);overflow:hidden;}
+.cmdk-input-wrap{display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid var(--line);}
+.cmdk-input-wrap i{color:var(--muted);font-size:15px;}
+#cmdkInput{flex:1;border:none;background:transparent;font-family:var(--sans);font-size:16px;color:var(--ink);outline:none;}
+.cmdk-esc{font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:3px;padding:2px 6px;color:var(--muted);}
+.cmdk-list{list-style:none;max-height:52vh;overflow:auto;padding:8px;}
+.cmdk-item{display:flex;align-items:center;gap:13px;padding:11px 13px;border-radius:7px;cursor:pointer;}
+.cmdk-item .ci-ic{width:18px;text-align:center;color:var(--muted);font-size:14px;}
+.cmdk-item .ci-label{flex:1;font-size:14.5px;color:var(--ink);}
+.cmdk-item .ci-hint{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);}
+.cmdk-item.sel{background:var(--accent-tint);}
+.cmdk-item.sel .ci-label{color:var(--accent);}
+.cmdk-item.sel .ci-ic{color:var(--accent);}
+.cmdk-empty{padding:22px;text-align:center;color:var(--muted);font-size:14px;}
+
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1);}
 .reveal.in{opacity:1;transform:none;}
 
-/* Focus + reduced motion */
-a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
-.hero a:focus-visible,.section-contact a:focus-visible{outline-color:var(--accent-soft);}
+a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.copy-btn:focus-visible,.to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+.hero a:focus-visible,.section-contact a:focus-visible,.section-contact .copy-btn:focus-visible{outline-color:var(--accent-soft);}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   .reveal{opacity:1;transform:none;transition:none;}
-  .btn,.chip,.socials a{transition:none;}
+  .btn,.chip,.socials a,.to-top,.toast,.hero-socials a{transition:none;}
 }
-
-/* Responsive */
 @media (max-width:760px){
   body{font-size:16px;}
   .hero-grid{grid-template-columns:1fr;gap:36px;padding-top:64px;}
   .hero-photo{justify-self:start;order:-1;}
   .hero-photo img{width:148px;height:184px;}
-  .nav-links{gap:16px;}
+  .nav-links{gap:14px;}
   .nav-name{font-size:16px;}
+  .icon-btn .kbd{display:none;}
   .research-grid{grid-template-columns:1fr;gap:30px;}
   .research-body p{font-size:18px;}
   .pub,.term{grid-template-columns:54px 1fr;gap:16px;}
   .talk{grid-template-columns:1fr;gap:8px;}
   .talk-meta{flex-direction:row;align-items:center;gap:10px;}
 }
-@media (max-width:520px){
+@media (max-width:560px){
   .nav-links{display:none;}
 }
 </style>
@@ -279,13 +213,17 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <nav class="nav">
   <div class="wrap nav-wrap">
     <a class="nav-name" href="#top">Martín Arnaiz Iglesias</a>
-    <div class="nav-links">
-      <a href="#research">research</a>
-      <a href="#publications">publications</a>
-      <a href="#talks">talks</a>
-      <a href="#teaching">teaching</a>
-      <a href="{{ '/cv/' | relative_url }}">cv</a>
-      <a href="#contact">contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#research">research</a>
+        <a href="#publications">publications</a>
+        <a href="#talks">talks</a>
+        <a href="#teaching">teaching</a>
+        <a href="{{ '/cv/' | relative_url }}">cv</a>
+        <a href="#contact">contact</a>
+      </div>
+      <button class="icon-btn" id="paletteBtn" aria-label="Open quick menu"><i class="fa-solid fa-magnifying-glass"></i><span class="kbd">⌘K</span></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
     </div>
   </div>
 </nav>
@@ -296,10 +234,18 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
       <p class="eyebrow on-dark">PhD candidate · Applied Mathematics &amp; Quantitative Finance</p>
       <h1 class="hero-name">Martín Arnaiz<br>Iglesias</h1>
       <div class="hero-badge"><span class="dot"></span>Science &amp; Management — Dual PhD &amp; MBA · Collège des Ingénieurs</div>
-      <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to portfolio optimization, at the Centre d'Économie de la Sorbonne. In addition I am also enrolled in a MBA program at the Collège des Ingenieurs</p>
+      <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to portfolio optimization, at the Centre d'Économie de la Sorbonne. In addition, I am also enrolled in an MBA program at the Collège des Ingénieurs.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="#publications">View publications <i class="fa-solid fa-arrow-down"></i></a>
         <a class="btn btn-ghost" href="{{ '/cv/' | relative_url }}">Curriculum vitae <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+        <a href="https://orcid.org/0009-0002-3088-9157" target="_blank" rel="noopener" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://github.com/martinarnaiziglesias" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/martin-arnaiz-iglesias/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:martin.arnaiz.iglesias@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
     <div class="hero-photo reveal">
@@ -350,7 +296,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
       </li>
       {% endfor %}
     </ol>
-
     {% if site.data.publications.working %}
     <p class="pub-subhead">Working papers</p>
     <ol class="pub-list">
@@ -371,7 +316,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 
 <section class="section" id="talks">
   <div class="wrap reveal">
-    <p class="eyebrow">Talks</p>
+    <p class="eyebrow">Talks &amp; posters</p>
     <ol class="talk-list">
       <li class="talk">
         <div class="talk-meta">
@@ -384,18 +329,22 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
         </div>
       </li>
       <li class="talk">
-        <div class="talk-meta">
-          <span class="talk-date">Sep 2025</span>
+        <div class="talk-meta"><span class="talk-date">Nov 2025</span></div>
+        <div class="talk-main">
+          <h3 class="talk-title"><a href="https://informaconnect.com/quantminds-international/" target="_blank" rel="noopener">QuantMinds International</a></h3>
+          <p class="talk-where">PhD Poster Session · InterContinental O2, London · November 2025</p>
+          <div class="talk-links"><a class="chip" href="{{ '/assets/poster-quantminds-2025.pdf' | relative_url }}" target="_blank" rel="noopener">Poster (PDF)</a></div>
         </div>
+      </li>
+      <li class="talk">
+        <div class="talk-meta"><span class="talk-date">Sep 2025</span></div>
         <div class="talk-main">
           <h3 class="talk-title"><a href="https://scf2025.iseg.ulisboa.pt/" target="_blank" rel="noopener">Stochastics &amp; Computational Finance</a></h3>
           <p class="talk-where">New Trends from Academia to Real-World Applications · Lisbon, Portugal · 2–5 September 2025</p>
         </div>
       </li>
       <li class="talk">
-        <div class="talk-meta">
-          <span class="talk-date">Mar 2025</span>
-        </div>
+        <div class="talk-meta"><span class="talk-date">Mar 2025</span></div>
         <div class="talk-main">
           <h3 class="talk-title"><a href="https://www.risks-forum.org/RF2025" target="_blank" rel="noopener">Financial Risks International Forum</a></h3>
           <p class="talk-where">18th edition · Institut Louis Bachelier · Paris (CCI Paris Île-de-France) · 17–18 March 2025</p>
@@ -408,7 +357,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <section class="section section-alt" id="teaching">
   <div class="wrap reveal">
     <p class="eyebrow">Teaching</p>
-
     <div class="course">
       <div class="course-head">
         <h3 class="course-title">Fondements des mathématiques</h3>
@@ -435,7 +383,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
         </div>
       </div>
     </div>
-
     <div class="course">
       <div class="course-head">
         <h3 class="course-title">Modèles mathématiques en finance</h3>
@@ -458,7 +405,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
     <p class="eyebrow on-dark">Contact</p>
     <h2 class="contact-head">Let's get in touch</h2>
     <p class="contact-lead">For research, teaching or collaboration, feel free to reach out.</p>
-    <a class="contact-email" href="mailto:martin.arnaiz.iglesias@gmail.com">martin.arnaiz.iglesias@gmail.com</a>
+    <div class="contact-email-row">
+      <a class="contact-email" href="mailto:martin.arnaiz.iglesias@gmail.com">martin.arnaiz.iglesias@gmail.com</a>
+      <button class="copy-btn" data-copy-email="martin.arnaiz.iglesias@gmail.com" aria-label="Copy email address"><i class="fa-solid fa-copy"></i></button>
+    </div>
     <div class="socials">
       <a href="https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
       <a href="https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
@@ -476,22 +426,105 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="cmdk" id="cmdk" aria-hidden="true">
+  <div class="cmdk-backdrop" data-close></div>
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Quick menu">
+    <div class="cmdk-input-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="cmdkInput" type="text" placeholder="Jump to… (try 'pub', 'cv', 'linkedin')" autocomplete="off" spellcheck="false">
+      <span class="cmdk-esc">esc</span>
+    </div>
+    <ul class="cmdk-list" id="cmdkList"></ul>
+  </div>
+</div>
+
 <script>
 (function(){
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-    return;
+  var root=document.documentElement;
+  var themeBtn=document.getElementById('themeBtn');
+  function themeIcon(){var i=themeBtn&&themeBtn.querySelector('i');if(i)i.className=root.getAttribute('data-theme')==='dark'?'fa-solid fa-sun':'fa-solid fa-moon';}
+  function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}themeIcon();}
+  themeIcon();
+  if(themeBtn)themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+
+  var navlinks=Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var map={};navlinks.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navlinks.forEach(function(a){a.classList.remove('active');});if(map[e.target.id])map[e.target.id].classList.add('active');}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el);});
   }
-  if(!('IntersectionObserver' in window)){
-    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-    return;
-  }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+
+  var toTop=document.getElementById('toTop');
+  if(toTop){window.addEventListener('scroll',function(){toTop.classList.toggle('show',window.scrollY>500);},{passive:true});toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+
+  var toast=document.getElementById('toast');
+  function showToast(m){if(!toast)return;toast.textContent=m;toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show');},1900);}
+  var EMAIL='martin.arnaiz.iglesias@gmail.com';
+  function copyEmail(){if(navigator.clipboard){navigator.clipboard.writeText(EMAIL).then(function(){showToast('Email copied — '+EMAIL);},function(){showToast(EMAIL);});}else{showToast(EMAIL);}}
+  document.querySelectorAll('[data-copy-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();copyEmail();});});
+
+  var cmdk=document.getElementById('cmdk'),input=document.getElementById('cmdkInput'),list=document.getElementById('cmdkList'),openBtn=document.getElementById('paletteBtn');
+  function jump(h){closeCmdk();var el=document.querySelector(h);if(el)el.scrollIntoView({behavior:'smooth'});}
+  function ext(u){closeCmdk();window.open(u,'_blank','noopener');}
+  var items=[
+    {l:'Research',h:'Section',ic:'fa-solid fa-flask',go:function(){jump('#research');}},
+    {l:'Publications',h:'Section',ic:'fa-solid fa-book',go:function(){jump('#publications');}},
+    {l:'Talks & posters',h:'Section',ic:'fa-solid fa-microphone-lines',go:function(){jump('#talks');}},
+    {l:'Teaching',h:'Section',ic:'fa-solid fa-chalkboard-user',go:function(){jump('#teaching');}},
+    {l:'Contact',h:'Section',ic:'fa-solid fa-envelope',go:function(){jump('#contact');}},
+    {l:'Curriculum Vitae',h:'Page',ic:'fa-solid fa-file-lines',go:function(){location.href='{{ '/cv/' | relative_url }}';}},
+    {l:'Copy email',h:'Action',ic:'fa-solid fa-copy',go:function(){closeCmdk();copyEmail();}},
+    {l:'Toggle dark mode',h:'Action',ic:'fa-solid fa-circle-half-stroke',go:function(){closeCmdk();setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');}},
+    {l:'Google Scholar',h:'External',ic:'fa-solid fa-graduation-cap',go:function(){ext('https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ');}},
+    {l:'GitHub',h:'External',ic:'fa-brands fa-github',go:function(){ext('https://github.com/martinarnaiziglesias');}},
+    {l:'LinkedIn',h:'External',ic:'fa-brands fa-linkedin-in',go:function(){ext('https://www.linkedin.com/in/martin-arnaiz-iglesias/');}},
+    {l:'ResearchGate',h:'External',ic:'fa-brands fa-researchgate',go:function(){ext('https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias');}},
+    {l:'ORCID',h:'External',ic:'fa-brands fa-orcid',go:function(){ext('https://orcid.org/0009-0002-3088-9157');}}
+  ];
+  var sel=0,filtered=items.slice();
+  function render(){
+    var q=input.value.toLowerCase().trim();
+    filtered=items.filter(function(it){return it.l.toLowerCase().indexOf(q)!==-1||it.h.toLowerCase().indexOf(q)!==-1;});
+    if(sel>=filtered.length)sel=0;
+    list.innerHTML='';
+    if(!filtered.length){list.innerHTML='<li class="cmdk-empty">No matches</li>';return;}
+    filtered.forEach(function(it,i){
+      var li=document.createElement('li');
+      li.className='cmdk-item'+(i===sel?' sel':'');
+      li.innerHTML='<span class="ci-ic"><i class="'+it.ic+'"></i></span><span class="ci-label"></span><span class="ci-hint"></span>';
+      li.querySelector('.ci-label').textContent=it.l;
+      li.querySelector('.ci-hint').textContent=it.h;
+      li.addEventListener('click',it.go);
+      li.addEventListener('mousemove',function(){if(sel!==i){sel=i;paint();}});
+      list.appendChild(li);
     });
-  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }
+  function paint(){Array.prototype.forEach.call(list.children,function(li,i){li.classList.toggle('sel',i===sel);});}
+  function ensureVis(){var el=list.children[sel];if(el&&el.scrollIntoView)el.scrollIntoView({block:'nearest'});}
+  function openCmdk(){cmdk.classList.add('open');cmdk.setAttribute('aria-hidden','false');input.value='';sel=0;render();setTimeout(function(){input.focus();},20);}
+  function closeCmdk(){cmdk.classList.remove('open');cmdk.setAttribute('aria-hidden','true');}
+  if(openBtn)openBtn.addEventListener('click',openCmdk);
+  if(cmdk)cmdk.querySelector('[data-close]').addEventListener('click',closeCmdk);
+  if(input){
+    input.addEventListener('input',function(){sel=0;render();});
+    input.addEventListener('keydown',function(e){
+      if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,filtered.length-1);paint();ensureVis();}
+      else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);paint();ensureVis();}
+      else if(e.key==='Enter'){e.preventDefault();if(filtered[sel])filtered[sel].go();}
+      else if(e.key==='Escape'){closeCmdk();}
+    });
+  }
+  document.addEventListener('keydown',function(e){
+    if((e.metaKey||e.ctrlKey)&&(e.key==='k'||e.key==='K')){e.preventDefault();if(cmdk.classList.contains('open'))closeCmdk();else openCmdk();}
+    else if(e.key==='Escape'&&cmdk.classList.contains('open')){closeCmdk();}
+  });
+
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  else if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}
+  else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
 })();
 </script>
 </body>
