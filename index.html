@@ -182,6 +182,7 @@ img{display:block;max-width:100%;}
 .pub-title{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.72rem);font-weight:500;line-height:1.22;letter-spacing:-0.01em;margin-bottom:9px;}
 .pub-authors{font-size:15.5px;color:var(--muted);margin-bottom:16px;}
 .pub-authors strong{color:var(--ink);font-weight:600;}
+.pub-venue{font-family:var(--mono);font-size:12.5px;letter-spacing:0.02em;color:var(--accent);margin-bottom:9px;}
 .pub-links,.mat{display:flex;flex-wrap:wrap;gap:9px;}
 .chip{
   font-family:var(--mono);font-size:12px;letter-spacing:0.03em;
@@ -205,6 +206,8 @@ img{display:block;max-width:100%;}
 .talk-flag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-dark);background:rgba(20,122,92,0.12);border-radius:2px;padding:3px 8px;}
 .talk-title{font-family:var(--serif);font-size:clamp(1.25rem,2.1vw,1.5rem);font-weight:500;line-height:1.24;letter-spacing:-0.01em;margin-bottom:8px;}
 .talk-where{font-size:15px;color:var(--muted);line-height:1.55;}
+.talk-title a{color:var(--ink);transition:color .18s ease;}
+.talk-title a:hover{color:var(--accent);}
 
 /* Teaching */
 .course{padding:30px 0;border-top:1px solid var(--line);}
@@ -281,6 +284,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
       <a href="#publications">publications</a>
       <a href="#talks">talks</a>
       <a href="#teaching">teaching</a>
+      <a href="{{ '/cv/' | relative_url }}">cv</a>
       <a href="#contact">contact</a>
     </div>
   </div>
@@ -292,10 +296,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
       <p class="eyebrow on-dark">PhD candidate · Applied Mathematics &amp; Quantitative Finance</p>
       <h1 class="hero-name">Martín Arnaiz<br>Iglesias</h1>
       <div class="hero-badge"><span class="dot"></span>Science &amp; Management — Dual PhD &amp; MBA · Collège des Ingénieurs</div>
-      <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to portfolio optimization, at the Centre d'Économie de la Sorbonne. In addition to my PhD, I am enrolled in a MBA degree at the Collège des Ingénieurs.</p>
+      <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to risk budgeting, at the Centre d'Économie de la Sorbonne.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="#publications">View publications <i class="fa-solid fa-arrow-down"></i></a>
-        <a class="btn btn-ghost" href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">Curriculum vitae <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a class="btn btn-ghost" href="{{ '/cv/' | relative_url }}">Curriculum vitae <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
     <div class="hero-photo reveal">
@@ -337,6 +341,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
         <div class="pub-year">{{ pub.year }}</div>
         <div class="pub-main">
           <h3 class="pub-title">{{ pub.title }}</h3>
+          {% if pub.venue %}<p class="pub-venue">{{ pub.venue }}</p>{% endif %}
           <p class="pub-authors">{{ pub.authors | replace: 'Martín Arnaiz Iglesias', '<strong>Martín Arnaiz Iglesias</strong>' }}</p>
           <div class="pub-links">
             {% for l in pub.links %}<a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}
@@ -374,7 +379,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
           <span class="talk-flag">Upcoming</span>
         </div>
         <div class="talk-main">
-          <h3 class="talk-title">XIII Bachelier World Congress</h3>
+          <h3 class="talk-title"><a href="https://eventi.unibo.it/bachelier" target="_blank" rel="noopener">XIII Bachelier World Congress</a></h3>
           <p class="talk-where">Bachelier Finance Society · University of Bologna, Italy · 29 June – 3 July 2026</p>
         </div>
       </li>
@@ -383,7 +388,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
           <span class="talk-date">Sep 2025</span>
         </div>
         <div class="talk-main">
-          <h3 class="talk-title">Stochastics &amp; Computational Finance</h3>
+          <h3 class="talk-title"><a href="https://scf2025.iseg.ulisboa.pt/" target="_blank" rel="noopener">Stochastics &amp; Computational Finance</a></h3>
           <p class="talk-where">New Trends from Academia to Real-World Applications · Lisbon, Portugal · 2–5 September 2025</p>
         </div>
       </li>
@@ -392,7 +397,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
           <span class="talk-date">Mar 2025</span>
         </div>
         <div class="talk-main">
-          <h3 class="talk-title">Financial Risks International Forum</h3>
+          <h3 class="talk-title"><a href="https://www.risks-forum.org/RF2025" target="_blank" rel="noopener">Financial Risks International Forum</a></h3>
           <p class="talk-where">18th edition · Institut Louis Bachelier · Paris (CCI Paris Île-de-France) · 17–18 March 2025</p>
         </div>
       </li>
