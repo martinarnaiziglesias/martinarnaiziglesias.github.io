@@ -1,18 +1,18 @@
 ---
-title: CV — Martín Arnaiz Iglesias
-permalink: /cv/
-# Self-contained CV page. Does not use the Minimal Mistakes layout.
+title: Martín Arnaiz Iglesias
+# Self-contained homepage — does NOT use the Minimal Mistakes layout.
+# Publications come from _data/publications.yml.
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curriculum Vitae — Martín Arnaiz Iglesias</title>
-<meta name="description" content="Curriculum Vitae of Martín Arnaiz Iglesias — work experience, education, awards and languages.">
+<title>Martín Arnaiz Iglesias — PhD in Applied Mathematics & Quantitative Finance</title>
+<meta name="description" content="Martín Arnaiz Iglesias — PhD student in Applied Mathematics and Quantitative Finance at the Centre d'Économie de la Sorbonne, pursuing an MBA in Science & Management at the Collège des Ingénieurs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <script>(function(){try{var t=localStorage.getItem('theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <style>
@@ -20,29 +20,35 @@ permalink: /cv/
   --bg:#F6F7F5; --surface:#FFFFFF; --deep:#0E1A15;
   --ink:#15191A; --muted:#5E6A64; --line:#E3E6E2;
   --accent:#147A5C; --accent-soft:#8FDCC1;
-  --accent-tint:#EAF6F0; --tint-bg:rgba(20,122,92,0.12); --tint-text:#0E5C45;
+  --accent-tint:#EAF6F0; --aside-border:rgba(20,122,92,0.22);
+  --tint-bg:rgba(20,122,92,0.12); --tint-text:#0E5C45;
   --nav-bg:rgba(246,247,245,0.82);
   --serif:'Newsreader',Georgia,'Times New Roman',serif;
   --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
-  --maxw:1000px;
+  --maxw:1120px;
 }
 [data-theme="dark"]{
   --bg:#0E1A15; --surface:#16221C; --deep:#0A130F;
   --ink:#E7EAE5; --muted:#95A19A; --line:#26312B;
   --accent:#4FC79C; --accent-soft:#8FDCC1;
-  --accent-tint:rgba(79,199,156,0.10); --tint-bg:rgba(79,199,156,0.16); --tint-text:#A7E6CC;
+  --accent-tint:rgba(79,199,156,0.10); --aside-border:rgba(79,199,156,0.26);
+  --tint-bg:rgba(79,199,156,0.16); --tint-text:#A7E6CC;
   --nav-bg:rgba(14,26,21,0.82);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background .3s ease,color .3s ease;}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px);}
 a{color:var(--accent);text-decoration:none;transition:color .18s ease;}
+img{display:block;max-width:100%;}
 
 .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:26px;}
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block;}
+.eyebrow.on-dark{color:var(--accent-soft);}
+.eyebrow.on-dark::before{background:var(--accent-soft);}
 
+/* Nav */
 .nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);transition:background .3s ease,border-color .3s ease;}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
 .nav-name{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;}
@@ -52,192 +58,368 @@ a{color:var(--accent);text-decoration:none;transition:color .18s ease;}
 .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;color:var(--muted);text-transform:lowercase;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links a.active{color:var(--accent);}
-.icon-btn{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--line);border-radius:3px;height:32px;width:32px;color:var(--muted);cursor:pointer;transition:all .18s ease;}
+.icon-btn{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--line);border-radius:3px;height:32px;padding:0 9px;color:var(--muted);cursor:pointer;font-family:var(--mono);transition:all .18s ease;}
 .icon-btn:hover{color:var(--ink);border-color:var(--accent);}
+.icon-btn .kbd{font-size:10px;letter-spacing:0.04em;}
 
-.btn{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;padding:12px 20px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;}
+/* Hero */
+.hero{background:var(--deep);color:#EDEFEA;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(56px,9vw,108px) 0 clamp(40px,6vw,68px);}
+.hero-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.7rem,6.2vw,4.6rem);line-height:1.0;letter-spacing:-0.022em;color:#FCFDFB;margin:6px 0 20px;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:0.02em;color:var(--accent-soft);background:rgba(143,220,193,0.10);border:1px solid rgba(143,220,193,0.42);border-radius:2px;padding:10px 16px;margin-bottom:26px;}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-soft);flex-shrink:0;}
+.hero-lead{font-size:18.5px;line-height:1.6;max-width:48ch;color:#C9D2CC;margin-bottom:32px;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;padding:13px 22px;border-radius:2px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;}
 .btn i{font-size:11px;}
 .btn-solid{background:var(--accent);color:#FCFDFB;border:1px solid var(--accent);}
 .btn-solid:hover{background:#10674E;border-color:#10674E;color:#FCFDFB;transform:translateY(-2px);}
-.btn-line{background:transparent;color:var(--ink);border:1px solid var(--line);}
-.btn-line:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:#EDEFEA;border:1px solid rgba(255,255,255,0.16);}
+.btn-ghost:hover{border-color:var(--accent-soft);color:#FCFDFB;transform:translateY(-2px);}
+.hero-socials{display:flex;gap:18px;margin-top:26px;}
+.hero-socials a{color:#A9B4AE;font-size:18px;transition:color .18s ease,transform .15s ease;}
+.hero-socials a:hover{color:var(--accent-soft);transform:translateY(-2px);}
+.hero-photo{justify-self:end;}
+.hero-photo img{width:clamp(180px,22vw,272px);height:clamp(220px,27vw,336px);object-fit:cover;border-radius:3px;border:1px solid rgba(255,255,255,0.16);filter:grayscale(8%);}
 
-.cv-head{padding:clamp(48px,7vw,84px) 0 clamp(30px,4vw,44px);}
-.cv-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.02;letter-spacing:-0.022em;margin:4px 0 14px;}
-.cv-sub{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:30px;}
-.cv-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.affil{border-top:1px solid rgba(255,255,255,0.16);display:flex;flex-wrap:wrap;gap:10px 26px;padding:20px clamp(20px,5vw,56px);max-width:var(--maxw);margin:0 auto;}
+.affil span{font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;color:#8C968F;display:flex;align-items:center;gap:26px;}
+.affil span:not(:last-child)::after{content:"";width:4px;height:4px;border-radius:50%;background:#3A4640;}
 
-.section{padding:clamp(40px,5vw,58px) 0;border-top:1px solid var(--line);}
-.cv-entry{display:grid;grid-template-columns:140px 1fr;gap:28px;padding:22px 0;}
-.cv-entry + .cv-entry{border-top:1px solid var(--line);}
-.cv-when{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:5px;letter-spacing:0.02em;}
-.cv-role{font-family:var(--serif);font-size:1.32rem;font-weight:600;line-height:1.22;letter-spacing:-0.01em;margin-bottom:3px;}
-.cv-place{font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:var(--muted);margin-bottom:11px;}
-.cv-desc{font-size:15.5px;line-height:1.62;color:var(--muted);}
+.section{padding:clamp(64px,9vw,118px) 0;}
+.section-alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s ease,border-color .3s ease;}
 
-.awards{list-style:none;display:grid;gap:12px;}
-.awards li{display:flex;gap:13px;align-items:flex-start;font-size:16px;color:var(--ink);}
-.awards li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:9px;}
+.research-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(28px,5vw,64px);align-items:start;}
+.research-body p{font-size:20px;line-height:1.62;color:var(--ink);}
+.research-body a{border-bottom:1px solid var(--aside-border);}
+.research-body a:hover{border-bottom-color:var(--accent);}
+.research-aside{background:var(--accent-tint);border:1px solid var(--aside-border);border-radius:4px;padding:26px 28px;}
+.aside-badge{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:4px 10px;margin-bottom:16px;}
+.aside-title{font-family:var(--serif);font-size:1.32rem;font-weight:600;line-height:1.18;color:var(--ink);margin-bottom:4px;}
+.aside-org{font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:var(--accent);margin-bottom:16px;}
+.aside-text{font-size:14.5px;line-height:1.6;color:var(--muted);}
 
-.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px 28px;}
-.lang{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line);}
-.lang-name{font-family:var(--serif);font-size:1.18rem;color:var(--ink);}
-.lang-level{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:4px 9px;white-space:nowrap;}
+.pub-list{list-style:none;}
+.pub{display:grid;grid-template-columns:84px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);}
+.pub-list .pub:last-child{border-bottom:1px solid var(--line);}
+.pub-year{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:5px;}
+.pub-title{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.72rem);font-weight:500;line-height:1.22;letter-spacing:-0.01em;margin-bottom:9px;}
+.pub-authors{font-size:15.5px;color:var(--muted);margin-bottom:16px;}
+.pub-authors strong{color:var(--ink);font-weight:600;}
+.pub-venue{font-family:var(--mono);font-size:12.5px;letter-spacing:0.02em;color:var(--accent);margin-bottom:9px;}
+.pub-links,.mat,.talk-links{display:flex;flex-wrap:wrap;gap:9px;}
+.talk-links{margin-top:11px;}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:0.03em;padding:6px 13px;border:1px solid var(--line);border-radius:2px;color:var(--muted);background:var(--surface);transition:all .17s ease;}
+.section-alt .chip{background:var(--bg);}
+.chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+.chip-demo{background:#147A5C;border-color:#147A5C;color:#FCFDFB;font-weight:500;}
+.chip-demo:hover{background:#10674E;border-color:#10674E;color:#FCFDFB;transform:translateY(-1px);}
+.pub-subhead{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:42px 0 2px;}
+.wp-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:4px 8px;}
+.pub-status{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.02em;}
 
-.foot{background:#0A130F;color:#7E8983;margin-top:clamp(40px,5vw,58px);}
+.talk-list{list-style:none;}
+.talk{display:grid;grid-template-columns:118px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line);}
+.talk-list .talk:last-child{border-bottom:1px solid var(--line);}
+.talk-meta{padding-top:4px;display:flex;flex-direction:column;gap:9px;align-items:flex-start;}
+.talk-date{font-family:var(--mono);font-size:13px;color:var(--muted);}
+.talk-flag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--tint-text);background:var(--tint-bg);border-radius:2px;padding:3px 8px;}
+.talk-title{font-family:var(--serif);font-size:clamp(1.25rem,2.1vw,1.5rem);font-weight:500;line-height:1.24;letter-spacing:-0.01em;margin-bottom:8px;}
+.talk-title a{color:var(--ink);transition:color .18s ease;}
+.talk-title a:hover{color:var(--accent);}
+.talk-where{font-size:15px;color:var(--muted);line-height:1.55;}
+
+.course{padding:30px 0;border-top:1px solid var(--line);}
+.course:last-of-type{border-bottom:1px solid var(--line);}
+.course-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
+.course-title{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.55rem);font-weight:500;letter-spacing:-0.01em;}
+.course-meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.03em;}
+.term{display:grid;grid-template-columns:84px 1fr;gap:28px;padding:11px 0;}
+.term-year{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:4px;}
+
+.section-contact{background:var(--deep);color:#EDEFEA;}
+.contact-head{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:-0.02em;color:#FCFDFB;line-height:1.05;margin-bottom:18px;}
+.contact-lead{font-size:18px;color:#C9D2CC;max-width:42ch;margin-bottom:30px;}
+.contact-email-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.contact-email{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);color:#FCFDFB;border-bottom:1px solid rgba(255,255,255,0.16);padding-bottom:3px;transition:border-color .2s ease,color .2s ease;}
+.contact-email:hover{color:var(--accent-soft);border-bottom-color:var(--accent-soft);}
+.copy-btn{background:transparent;border:1px solid rgba(255,255,255,0.16);border-radius:3px;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;color:#C9D2CC;cursor:pointer;transition:all .18s ease;}
+.copy-btn:hover{border-color:var(--accent-soft);color:#FCFDFB;}
+.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:42px;}
+.socials a{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;color:#C9D2CC;border:1px solid rgba(255,255,255,0.16);border-radius:2px;padding:10px 15px;transition:all .18s ease;}
+.socials a i{font-size:15px;color:var(--accent-soft);transition:color .18s ease;}
+.socials a:hover{border-color:var(--accent-soft);color:#FCFDFB;transform:translateY(-2px);}
+
+.foot{background:#0A130F;color:#7E8983;}
 .foot-wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:26px clamp(20px,5vw,56px);font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;}
-.foot-wrap a{color:var(--accent-soft);}
 
+/* Back to top */
 .to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#FCFDFB;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:40;box-shadow:0 6px 18px rgba(0,0,0,0.22);}
 .to-top.show{opacity:1;visibility:visible;transform:none;}
 .to-top:hover{transform:translateY(-2px);}
 
-a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.btn,.to-top{transition:none;}}
-@media (max-width:680px){
+/* Toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:12.5px;letter-spacing:0.02em;padding:11px 18px;border-radius:5px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:120;box-shadow:0 8px 24px rgba(0,0,0,0.25);}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%);}
+
+/* Command palette */
+.cmdk{position:fixed;inset:0;z-index:100;display:none;}
+.cmdk.open{display:block;}
+.cmdk-backdrop{position:absolute;inset:0;background:rgba(8,12,10,0.5);backdrop-filter:blur(2px);}
+.cmdk-panel{position:relative;max-width:560px;margin:13vh auto 0;background:var(--surface);border:1px solid var(--line);border-radius:11px;box-shadow:0 24px 70px rgba(0,0,0,0.35);overflow:hidden;}
+.cmdk-input-wrap{display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid var(--line);}
+.cmdk-input-wrap i{color:var(--muted);font-size:15px;}
+#cmdkInput{flex:1;border:none;background:transparent;font-family:var(--sans);font-size:16px;color:var(--ink);outline:none;}
+.cmdk-esc{font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:3px;padding:2px 6px;color:var(--muted);}
+.cmdk-list{list-style:none;max-height:52vh;overflow:auto;padding:8px;}
+.cmdk-item{display:flex;align-items:center;gap:13px;padding:11px 13px;border-radius:7px;cursor:pointer;}
+.cmdk-item .ci-ic{width:18px;text-align:center;color:var(--muted);font-size:14px;}
+.cmdk-item .ci-label{flex:1;font-size:14.5px;color:var(--ink);}
+.cmdk-item .ci-hint{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);}
+.cmdk-item.sel{background:var(--accent-tint);}
+.cmdk-item.sel .ci-label{color:var(--accent);}
+.cmdk-item.sel .ci-ic{color:var(--accent);}
+.cmdk-empty{padding:22px;text-align:center;color:var(--muted);font-size:14px;}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+
+a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.copy-btn:focus-visible,.to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+.hero a:focus-visible,.section-contact a:focus-visible,.section-contact .copy-btn:focus-visible{outline-color:var(--accent-soft);}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  .btn,.chip,.socials a,.to-top,.toast,.hero-socials a{transition:none;}
+}
+@media (max-width:760px){
   body{font-size:16px;}
+  .hero-grid{grid-template-columns:1fr;gap:36px;padding-top:64px;}
+  .hero-photo{justify-self:start;order:-1;}
+  .hero-photo img{width:148px;height:184px;}
   .nav-links{gap:14px;}
   .nav-name{font-size:16px;}
-  .cv-entry{grid-template-columns:1fr;gap:8px;}
+  .icon-btn .kbd{display:none;}
+  .research-grid{grid-template-columns:1fr;gap:30px;}
+  .research-body p{font-size:18px;}
+  .pub,.term{grid-template-columns:54px 1fr;gap:16px;}
+  .talk{grid-template-columns:1fr;gap:8px;}
+  .talk-meta{flex-direction:row;align-items:center;gap:10px;}
 }
-@media (max-width:480px){.nav-links a:not(.active){display:none;}}
+@media (max-width:560px){
+  .nav-links{display:none;}
+}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="wrap nav-wrap">
-    <a class="nav-name" href="/">Martín Arnaiz Iglesias</a>
+    <a class="nav-name" href="#top">Martín Arnaiz Iglesias</a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="/#research">research</a>
-        <a href="/#publications">publications</a>
-        <a href="/#talks">talks</a>
-        <a href="/#teaching">teaching</a>
-        <a href="/cv/" class="active">cv</a>
-        <a href="/#contact">contact</a>
+        <a href="#research">research</a>
+        <a href="#publications">publications</a>
+        <a href="#talks">talks</a>
+        <a href="#teaching">teaching</a>
+        <a href="{{ '/cv/' | relative_url }}">cv</a>
+        <a href="#contact">contact</a>
       </div>
+      <button class="icon-btn" id="paletteBtn" aria-label="Open quick menu"><i class="fa-solid fa-magnifying-glass"></i><span class="kbd">⌘K</span></button>
       <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
     </div>
   </div>
 </nav>
 
-<header class="cv-head">
-  <div class="wrap">
-    <p class="eyebrow">Curriculum Vitae</p>
-    <h1 class="cv-name">Martín Arnaiz Iglesias</h1>
-    <p class="cv-sub">PhD candidate in Applied Mathematics &amp; Quantitative Finance · Dual PhD &amp; MBA, Collège des Ingénieurs · Centre d'Économie de la Sorbonne.</p>
-    <div class="cv-actions">
-      <a class="btn btn-solid" href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">Download PDF <i class="fa-solid fa-download"></i></a>
-      <a class="btn btn-line" href="/"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-main reveal">
+      <p class="eyebrow on-dark">PhD candidate · Applied Mathematics &amp; Quantitative Finance</p>
+      <h1 class="hero-name">Martín Arnaiz<br>Iglesias</h1>
+      <div class="hero-badge"><span class="dot"></span>MBA · Science &amp; Management · Collège des Ingénieurs</div>
+      <p class="hero-lead">I work on stochastic approximation schemes in finance and their applications to portfolio optimization, at the Centre d'Économie de la Sorbonne. Alongside my PhD, I am pursuing an MBA in Science &amp; Management at the Collège des Ingénieurs.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#publications">View publications <i class="fa-solid fa-arrow-down"></i></a>
+        <a class="btn btn-ghost" href="{{ '/cv/' | relative_url }}">Curriculum vitae <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn-ghost" href="{{ '/demo/' | relative_url }}"><i class="fa-solid fa-circle-play"></i> Live demo</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+        <a href="https://orcid.org/0009-0002-3088-9157" target="_blank" rel="noopener" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://github.com/martinarnaiziglesias" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/martin-arnaiz-iglesias/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:martin.arnaiz.iglesias@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
     </div>
+    <div class="hero-photo reveal">
+      <img src="{{ '/foto.jpg' | relative_url }}" alt="Portrait of Martín Arnaiz Iglesias">
+    </div>
+  </div>
+  <div class="affil">
+    <span>Centre d'Économie de la Sorbonne</span>
+    <span>CNRS</span>
+    <span>Université Paris 1 Panthéon-Sorbonne</span>
+    <span>IRD</span>
+    <span>Collège des Ingénieurs</span>
   </div>
 </header>
 
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">Work experience</p>
-    <div class="cv-entry">
-      <div class="cv-when">2024 – Present</div>
-      <div class="cv-what">
-        <h3 class="cv-role">Quantitative Researcher (PhD student)</h3>
-        <p class="cv-place">Centre d'Économie de la Sorbonne</p>
-        <p class="cv-desc">Stochastic approximation schemes in finance, particularly their applications to risk budgeting and other financial processes. Supervised by Noufel Frikha.</p>
+<section class="section" id="research">
+  <div class="wrap reveal">
+    <p class="eyebrow">Research</p>
+    <div class="research-grid">
+      <div class="research-body">
+        <p>I am a PhD student at the <a href="https://centredeconomiesorbonne.cnrs.fr/en/home/" target="_blank" rel="noopener">Centre d'Économie de la Sorbonne</a> — a joint research laboratory of <a href="https://www.cnrs.fr/fr" target="_blank" rel="noopener">CNRS</a>, <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1 Panthéon-Sorbonne</a> and <a href="https://www.ird.fr/" target="_blank" rel="noopener">IRD</a>. I am part of the <a href="https://centredeconomiesorbonne.cnrs.fr/en/portfolio/financial-modelling/" target="_blank" rel="noopener">Financial Modelling</a> team, and my research focuses on stochastic approximation schemes in finance — particularly their applications to risk budgeting and other financial processes. My thesis is supervised by <a href="https://scholar.google.fr/citations?user=uW7X31UAAAAJ&hl=en" target="_blank" rel="noopener">Noufel Frikha</a>.</p>
+        <p style="margin-top:20px;font-family:var(--mono);font-size:13.5px;letter-spacing:0.02em;"><a href="{{ '/demo/' | relative_url }}"><i class="fa-solid fa-circle-play"></i> Try it live — interactive risk-budgeting demo &rarr;</a></p>
+      </div>
+      <aside class="research-aside">
+        <p class="aside-badge">MBA · selective program</p>
+        <p class="aside-title">MBA — Science &amp; Management</p>
+        <p class="aside-org">Collège des Ingénieurs</p>
+        <p class="aside-text">A highly selective MBA pursued in parallel with the PhD, pairing doctoral research with management training and corporate projects across Paris, Munich and Turin — bridging advanced financial theory with its real-world applications.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="publications">
+  <div class="wrap reveal">
+    <p class="eyebrow">Publications</p>
+    <ol class="pub-list">
+      {% for pub in site.data.publications.published %}
+      <li class="pub">
+        <div class="pub-year">{{ pub.year }}</div>
+        <div class="pub-main">
+          <h3 class="pub-title">{{ pub.title }}</h3>
+          {% if pub.venue %}<p class="pub-venue">{{ pub.venue }}</p>{% endif %}
+          <p class="pub-authors">{{ pub.authors | replace: 'Martín Arnaiz Iglesias', '<strong>Martín Arnaiz Iglesias</strong>' }}</p>
+          <div class="pub-links">
+            {% if pub.demo %}<a class="chip chip-demo" href="{{ pub.demo | relative_url }}"><i class="fa-solid fa-circle-play"></i> Live demo</a>{% endif %}
+            {% for l in pub.links %}<a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if site.data.publications.working %}
+    <p class="pub-subhead">Working papers</p>
+    <ol class="pub-list">
+      {% for pub in site.data.publications.working %}
+      <li class="pub">
+        <div class="pub-year"><span class="wp-tag">WP</span></div>
+        <div class="pub-main">
+          <h3 class="pub-title">{{ pub.title }}</h3>
+          <p class="pub-authors">{{ pub.authors | replace: 'Martín Arnaiz Iglesias', '<strong>Martín Arnaiz Iglesias</strong>' }}</p>
+          {% if pub.links %}<div class="pub-links">{% for l in pub.links %}<a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}</div>{% else %}<p class="pub-status">In preparation</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section" id="talks">
+  <div class="wrap reveal">
+    <p class="eyebrow">Talks &amp; posters</p>
+    <ol class="talk-list">
+      <li class="talk">
+        <div class="talk-meta">
+          <span class="talk-date">Jun 2026</span>
+          <span class="talk-flag">Upcoming</span>
+        </div>
+        <div class="talk-main">
+          <h3 class="talk-title"><a href="https://eventi.unibo.it/bachelier" target="_blank" rel="noopener">XIII Bachelier World Congress</a></h3>
+          <p class="talk-where">Bachelier Finance Society · University of Bologna, Italy · 29 June – 3 July 2026</p>
+        </div>
+      </li>
+      <li class="talk">
+        <div class="talk-meta"><span class="talk-date">Nov 2025</span></div>
+        <div class="talk-main">
+          <h3 class="talk-title"><a href="https://informaconnect.com/quantminds-international/" target="_blank" rel="noopener">QuantMinds International</a></h3>
+          <p class="talk-where">PhD Poster Session · InterContinental O2, London · November 2025</p>
+          <div class="talk-links"><a class="chip" href="{{ '/assets/poster-quantminds-2025.pdf' | relative_url }}" target="_blank" rel="noopener">Poster (PDF)</a></div>
+        </div>
+      </li>
+      <li class="talk">
+        <div class="talk-meta"><span class="talk-date">Sep 2025</span></div>
+        <div class="talk-main">
+          <h3 class="talk-title"><a href="https://scf2025.iseg.ulisboa.pt/" target="_blank" rel="noopener">Stochastics &amp; Computational Finance</a></h3>
+          <p class="talk-where">New Trends from Academia to Real-World Applications · Lisbon, Portugal · 2–5 September 2025</p>
+        </div>
+      </li>
+      <li class="talk">
+        <div class="talk-meta"><span class="talk-date">Mar 2025</span></div>
+        <div class="talk-main">
+          <h3 class="talk-title"><a href="https://www.risks-forum.org/RF2025" target="_blank" rel="noopener">Financial Risks International Forum</a></h3>
+          <p class="talk-where">18th edition · Institut Louis Bachelier · Paris (CCI Paris Île-de-France) · 17–18 March 2025</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt" id="teaching">
+  <div class="wrap reveal">
+    <p class="eyebrow">Teaching</p>
+    <div class="course">
+      <div class="course-head">
+        <h3 class="course-title">Fondements des mathématiques</h3>
+        <span class="course-meta">L1 MIASHS · Université Paris 1</span>
+      </div>
+      <div class="term">
+        <span class="term-year">2024</span>
+        <div class="mat">
+          <a class="chip" href="https://drive.google.com/file/d/1QWDixpKhrkhSSZ11u_Wbd-MzVAJhajGr/view" target="_blank" rel="noopener">Cours</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Gfe_7FY7MZFZqtHqttKJfjj893ZIpzxT/view" target="_blank" rel="noopener">Livret TD</a>
+          <a class="chip" href="https://drive.google.com/file/d/1A74lDSel_r904gsPE45OBu2lQIHPnC1c/view" target="_blank" rel="noopener">TD6</a>
+          <a class="chip" href="https://drive.google.com/file/d/1E4bkTjvDWPUE9KzU_fjSCmwr3aJKE-PN/view" target="_blank" rel="noopener">TD7</a>
+          <a class="chip" href="https://drive.google.com/file/d/1_p4swRHjlV2yZVy9Ov8msDg2ebf4l6P7/view" target="_blank" rel="noopener">TD8</a>
+          <a class="chip" href="https://drive.google.com/file/d/1E8NXRHEV0z6Mpbtk2GR2rkVnouVpuvg4/view" target="_blank" rel="noopener">TD9</a>
+          <a class="chip" href="https://drive.google.com/file/d/1kzB8yxDsKUFHwb3mogeK_5_LAp6XRLNR/view" target="_blank" rel="noopener">TD10</a>
+          <a class="chip" href="https://drive.google.com/file/d/1S-HAHIPcpzTgmyzV3wACFc47c-ez2E74/view" target="_blank" rel="noopener">Interro 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1OiUf8WsPNJ57bfclydChbDGNRtH3YNX0/view" target="_blank" rel="noopener">Interro 1 — corrigé</a>
+        </div>
+      </div>
+      <div class="term">
+        <span class="term-year">2025</span>
+        <div class="mat">
+          <a class="chip" href="https://drive.google.com/file/d/16U63iMjScBaZv-x0ZGljYawNilVv5NdI/view" target="_blank" rel="noopener">TD9</a>
+        </div>
       </div>
     </div>
-    <div class="cv-entry">
-      <div class="cv-when">2024 – Present</div>
-      <div class="cv-what">
-        <h3 class="cv-role">Teaching Assistant</h3>
-        <p class="cv-place">Université Paris 1 Panthéon-Sorbonne</p>
-        <p class="cv-desc">Teaching seminars and practical classes in Fundamentals of Mathematics.</p>
+    <div class="course">
+      <div class="course-head">
+        <h3 class="course-title">Modèles mathématiques en finance</h3>
+        <span class="course-meta">L3 MIASHS · Université Paris 1</span>
       </div>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-when">2024</div>
-      <div class="cv-what">
-        <h3 class="cv-role">Financial Analyst</h3>
-        <p class="cv-place">Tallunion SL</p>
-        <p class="cv-desc">Conducted profitability analysis of products and services. Managed cash flow and assisted with budget tracking. Optimized costs in logistics and inventory management. Prepared financial reports to support strategic decisions.</p>
-      </div>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-when">2021</div>
-      <div class="cv-what">
-        <h3 class="cv-role">Research Assistant</h3>
-        <p class="cv-place">Epidemiology &amp; Clinical Research Service · Santiago University Clinical Hospital (CHUS)</p>
-        <p class="cv-desc">Analysis of databases for the evaluation of treatment efficacy. Support in health research through statistics.</p>
+      <div class="term">
+        <span class="term-year">Course</span>
+        <div class="mat">
+          <a class="chip" href="https://drive.google.com/open?id=1sP2Duhl0-L5-EV58HfSJ5TDGOxQSUHxp" target="_blank" rel="noopener">Cours</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Gfe_7FY7MZFZqtHqttKJfjj893ZIpzxT/view" target="_blank" rel="noopener">Livret TD</a>
+          <a class="chip" href="https://drive.google.com/file/d/1hpWB9bY4qCK1xtt3M6vSaZDHG7vbg0Hf/view" target="_blank" rel="noopener">TD5</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">Education</p>
-    <div class="cv-entry">
-      <div class="cv-when">2024 – Present</div>
-      <div class="cv-what">
-        <h3 class="cv-role">MBA — Collège des Ingénieurs</h3>
-        <p class="cv-place">Science &amp; Management · PhD &amp; MBA program</p>
-        <p class="cv-desc">Rigorous academic research combined with practical management training and corporate projects across Paris, Munich and Turin. Focus on leadership, entrepreneurship and strategic decision-making.</p>
-      </div>
+<section class="section section-contact" id="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow on-dark">Contact</p>
+    <h2 class="contact-head">Let's get in touch</h2>
+    <p class="contact-lead">For research, teaching or collaboration, feel free to reach out.</p>
+    <div class="contact-email-row">
+      <a class="contact-email" href="mailto:martin.arnaiz.iglesias@gmail.com">martin.arnaiz.iglesias@gmail.com</a>
+      <button class="copy-btn" data-copy-email="martin.arnaiz.iglesias@gmail.com" aria-label="Copy email address"><i class="fa-solid fa-copy"></i></button>
     </div>
-    <div class="cv-entry">
-      <div class="cv-when">2024 – Present</div>
-      <div class="cv-what">
-        <h3 class="cv-role">PhD in Applied Mathematics</h3>
-        <p class="cv-place">Centre d'Économie de la Sorbonne</p>
-        <p class="cv-desc">Stochastic approximation schemes in finance, particularly their applications to risk budgeting and other financial processes. Supervised by Noufel Frikha.</p>
-      </div>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-when">2022 – 2024</div>
-      <div class="cv-what">
-        <h3 class="cv-role">MSc Quantitative Economic Methods (QEM)</h3>
-        <p class="cv-place">Erasmus Mundus Joint Master Degree · GPA 4/4</p>
-        <p class="cv-desc">A joint master among Université Paris 1 Panthéon-Sorbonne, UCLouvain, Universitat Autònoma de Barcelona, Università Ca' Foscari and the Warsaw School of Economics. Track: Università Ca' Foscari (2022); Université Paris 1 Panthéon-Sorbonne — M1 MMEF &amp; M2 MMMEF, quantitative finance (2023–2024). Stochastic calculus, machine learning, algorithmic trading, portfolio choice, asset pricing, Monte Carlo methods, econometrics, Hawkes processes, macro- and microeconomics, risk measures.</p>
-      </div>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-when">2018 – 2022</div>
-      <div class="cv-what">
-        <h3 class="cv-role">BSc in Mathematics</h3>
-        <p class="cv-place">Universidade de Santiago de Compostela · Grade 8.5/10</p>
-        <p class="cv-desc">With exchanges at Maria Curie-Skłodowska University and Universidad de Sevilla. Statistics, algebra, ODEs, PDEs, mathematical analysis, modelling, geometry, topology and game theory.</p>
-      </div>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-when">High school</div>
-      <div class="cv-what">
-        <h3 class="cv-role">Colexio Manuel Peleteiro</h3>
-        <p class="cv-place">Santiago de Compostela</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">Awards &amp; distinctions</p>
-    <ul class="awards">
-      <li>Bronze medal — Galician Economic Olympiad.</li>
-      <li>Galician Academic Excellence Award, 2020–2021.</li>
-      <li>Erasmus Mundus Scholarship.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">Languages</p>
-    <div class="langs">
-      <div class="lang"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
-      <div class="lang"><span class="lang-name">Galician</span><span class="lang-level">Native</span></div>
-      <div class="lang"><span class="lang-name">English</span><span class="lang-level">C1 · Cambridge</span></div>
-      <div class="lang"><span class="lang-name">Italian</span><span class="lang-level">C1</span></div>
-      <div class="lang"><span class="lang-name">French</span><span class="lang-level">C1</span></div>
-      <div class="lang"><span class="lang-name">German</span><span class="lang-level">A2</span></div>
+    <div class="socials">
+      <a href="https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
+      <a href="https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate"></i> ResearchGate</a>
+      <a href="https://orcid.org/0009-0002-3088-9157" target="_blank" rel="noopener"><i class="fa-brands fa-orcid"></i> ORCID</a>
+      <a href="https://github.com/martinarnaiziglesias" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/martin-arnaiz-iglesias/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
     </div>
   </div>
 </section>
@@ -245,21 +427,110 @@ a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.to-top:focus-visible
 <footer class="foot">
   <div class="foot-wrap">
     <span>© 2026 Martín Arnaiz Iglesias</span>
-    <span><a href="/">martinarnaiziglesias.github.io</a></span>
+    <span>Built with Jekyll · Paris</span>
   </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="cmdk" id="cmdk" aria-hidden="true">
+  <div class="cmdk-backdrop" data-close></div>
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Quick menu">
+    <div class="cmdk-input-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="cmdkInput" type="text" placeholder="Jump to… (try 'pub', 'cv', 'linkedin')" autocomplete="off" spellcheck="false">
+      <span class="cmdk-esc">esc</span>
+    </div>
+    <ul class="cmdk-list" id="cmdkList"></ul>
+  </div>
+</div>
 
 <script>
 (function(){
-  var root=document.documentElement,themeBtn=document.getElementById('themeBtn');
+  var root=document.documentElement;
+  var themeBtn=document.getElementById('themeBtn');
   function themeIcon(){var i=themeBtn&&themeBtn.querySelector('i');if(i)i.className=root.getAttribute('data-theme')==='dark'?'fa-solid fa-sun':'fa-solid fa-moon';}
   function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}themeIcon();}
   themeIcon();
   if(themeBtn)themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+
+  var navlinks=Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var map={};navlinks.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navlinks.forEach(function(a){a.classList.remove('active');});if(map[e.target.id])map[e.target.id].classList.add('active');}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el);});
+  }
+
   var toTop=document.getElementById('toTop');
   if(toTop){window.addEventListener('scroll',function(){toTop.classList.toggle('show',window.scrollY>500);},{passive:true});toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+
+  var toast=document.getElementById('toast');
+  function showToast(m){if(!toast)return;toast.textContent=m;toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show');},1900);}
+  var EMAIL='martin.arnaiz.iglesias@gmail.com';
+  function copyEmail(){if(navigator.clipboard){navigator.clipboard.writeText(EMAIL).then(function(){showToast('Email copied — '+EMAIL);},function(){showToast(EMAIL);});}else{showToast(EMAIL);}}
+  document.querySelectorAll('[data-copy-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();copyEmail();});});
+
+  var cmdk=document.getElementById('cmdk'),input=document.getElementById('cmdkInput'),list=document.getElementById('cmdkList'),openBtn=document.getElementById('paletteBtn');
+  function jump(h){closeCmdk();var el=document.querySelector(h);if(el)el.scrollIntoView({behavior:'smooth'});}
+  function ext(u){closeCmdk();window.open(u,'_blank','noopener');}
+  var items=[
+    {l:'Research',h:'Section',ic:'fa-solid fa-flask',go:function(){jump('#research');}},
+    {l:'Publications',h:'Section',ic:'fa-solid fa-book',go:function(){jump('#publications');}},
+    {l:'Talks & posters',h:'Section',ic:'fa-solid fa-microphone-lines',go:function(){jump('#talks');}},
+    {l:'Teaching',h:'Section',ic:'fa-solid fa-chalkboard-user',go:function(){jump('#teaching');}},
+    {l:'Contact',h:'Section',ic:'fa-solid fa-envelope',go:function(){jump('#contact');}},
+    {l:'Curriculum Vitae',h:'Page',ic:'fa-solid fa-file-lines',go:function(){location.href='{{ '/cv/' | relative_url }}';}},
+    {l:'Interactive demo',h:'Page',ic:'fa-solid fa-circle-play',go:function(){location.href='{{ '/demo/' | relative_url }}';}},
+    {l:'Copy email',h:'Action',ic:'fa-solid fa-copy',go:function(){closeCmdk();copyEmail();}},
+    {l:'Toggle dark mode',h:'Action',ic:'fa-solid fa-circle-half-stroke',go:function(){closeCmdk();setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');}},
+    {l:'Google Scholar',h:'External',ic:'fa-solid fa-graduation-cap',go:function(){ext('https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ');}},
+    {l:'GitHub',h:'External',ic:'fa-brands fa-github',go:function(){ext('https://github.com/martinarnaiziglesias');}},
+    {l:'LinkedIn',h:'External',ic:'fa-brands fa-linkedin-in',go:function(){ext('https://www.linkedin.com/in/martin-arnaiz-iglesias/');}},
+    {l:'ResearchGate',h:'External',ic:'fa-brands fa-researchgate',go:function(){ext('https://www.researchgate.net/profile/Martin-Arnaiz-Iglesias');}},
+    {l:'ORCID',h:'External',ic:'fa-brands fa-orcid',go:function(){ext('https://orcid.org/0009-0002-3088-9157');}}
+  ];
+  var sel=0,filtered=items.slice();
+  function render(){
+    var q=input.value.toLowerCase().trim();
+    filtered=items.filter(function(it){return it.l.toLowerCase().indexOf(q)!==-1||it.h.toLowerCase().indexOf(q)!==-1;});
+    if(sel>=filtered.length)sel=0;
+    list.innerHTML='';
+    if(!filtered.length){list.innerHTML='<li class="cmdk-empty">No matches</li>';return;}
+    filtered.forEach(function(it,i){
+      var li=document.createElement('li');
+      li.className='cmdk-item'+(i===sel?' sel':'');
+      li.innerHTML='<span class="ci-ic"><i class="'+it.ic+'"></i></span><span class="ci-label"></span><span class="ci-hint"></span>';
+      li.querySelector('.ci-label').textContent=it.l;
+      li.querySelector('.ci-hint').textContent=it.h;
+      li.addEventListener('click',it.go);
+      li.addEventListener('mousemove',function(){if(sel!==i){sel=i;paint();}});
+      list.appendChild(li);
+    });
+  }
+  function paint(){Array.prototype.forEach.call(list.children,function(li,i){li.classList.toggle('sel',i===sel);});}
+  function ensureVis(){var el=list.children[sel];if(el&&el.scrollIntoView)el.scrollIntoView({block:'nearest'});}
+  function openCmdk(){cmdk.classList.add('open');cmdk.setAttribute('aria-hidden','false');input.value='';sel=0;render();setTimeout(function(){input.focus();},20);}
+  function closeCmdk(){cmdk.classList.remove('open');cmdk.setAttribute('aria-hidden','true');}
+  if(openBtn)openBtn.addEventListener('click',openCmdk);
+  if(cmdk)cmdk.querySelector('[data-close]').addEventListener('click',closeCmdk);
+  if(input){
+    input.addEventListener('input',function(){sel=0;render();});
+    input.addEventListener('keydown',function(e){
+      if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,filtered.length-1);paint();ensureVis();}
+      else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);paint();ensureVis();}
+      else if(e.key==='Enter'){e.preventDefault();if(filtered[sel])filtered[sel].go();}
+      else if(e.key==='Escape'){closeCmdk();}
+    });
+  }
+  document.addEventListener('keydown',function(e){
+    if((e.metaKey||e.ctrlKey)&&(e.key==='k'||e.key==='K')){e.preventDefault();if(cmdk.classList.contains('open'))closeCmdk();else openCmdk();}
+    else if(e.key==='Escape'&&cmdk.classList.contains('open')){closeCmdk();}
+  });
+
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  else if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}
+  else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
 })();
 </script>
 </body>
