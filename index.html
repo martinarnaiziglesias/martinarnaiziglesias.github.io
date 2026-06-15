@@ -238,6 +238,7 @@ a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.copy-btn:focus-visib
       <div class="hero-cta">
         <a class="btn btn-solid" href="#publications">View publications <i class="fa-solid fa-arrow-down"></i></a>
         <a class="btn btn-ghost" href="{{ '/cv/' | relative_url }}">Curriculum vitae <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn-ghost" href="{{ '/demo/' | relative_url }}"><i class="fa-solid fa-circle-play"></i> Live demo</a>
       </div>
       <div class="hero-socials">
         <a href="https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
@@ -267,6 +268,7 @@ a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.copy-btn:focus-visib
     <div class="research-grid">
       <div class="research-body">
         <p>I am a PhD student at the <a href="https://centredeconomiesorbonne.cnrs.fr/en/home/" target="_blank" rel="noopener">Centre d'Économie de la Sorbonne</a> — a joint research laboratory of <a href="https://www.cnrs.fr/fr" target="_blank" rel="noopener">CNRS</a>, <a href="https://www.pantheonsorbonne.fr/" target="_blank" rel="noopener">Université Paris 1 Panthéon-Sorbonne</a> and <a href="https://www.ird.fr/" target="_blank" rel="noopener">IRD</a>. I am part of the <a href="https://centredeconomiesorbonne.cnrs.fr/en/portfolio/financial-modelling/" target="_blank" rel="noopener">Financial Modelling</a> team, and my research focuses on stochastic approximation schemes in finance — particularly their applications to risk budgeting and other financial processes. My thesis is supervised by <a href="https://scholar.google.fr/citations?user=uW7X31UAAAAJ&hl=en" target="_blank" rel="noopener">Noufel Frikha</a>.</p>
+        <p style="margin-top:20px;font-family:var(--mono);font-size:13.5px;letter-spacing:0.02em;"><a href="{{ '/demo/' | relative_url }}"><i class="fa-solid fa-circle-play"></i> Try it live — interactive risk-budgeting demo &rarr;</a></p>
       </div>
       <aside class="research-aside">
         <p class="aside-badge">Dual degree · selective program</p>
@@ -476,6 +478,7 @@ a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.copy-btn:focus-visib
     {l:'Teaching',h:'Section',ic:'fa-solid fa-chalkboard-user',go:function(){jump('#teaching');}},
     {l:'Contact',h:'Section',ic:'fa-solid fa-envelope',go:function(){jump('#contact');}},
     {l:'Curriculum Vitae',h:'Page',ic:'fa-solid fa-file-lines',go:function(){location.href='{{ '/cv/' | relative_url }}';}},
+    {l:'Interactive demo',h:'Page',ic:'fa-solid fa-circle-play',go:function(){location.href='{{ '/demo/' | relative_url }}';}},
     {l:'Copy email',h:'Action',ic:'fa-solid fa-copy',go:function(){closeCmdk();copyEmail();}},
     {l:'Toggle dark mode',h:'Action',ic:'fa-solid fa-circle-half-stroke',go:function(){closeCmdk();setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');}},
     {l:'Google Scholar',h:'External',ic:'fa-solid fa-graduation-cap',go:function(){ext('https://scholar.google.fr/citations?hl=es&user=lEGOJXoAAAAJ');}},
