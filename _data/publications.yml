@@ -9,12 +9,13 @@
 #  "venue" is optional (the journal line). Working papers
 #  without links show "In preparation".
 # ============================================================
-
+ 
 published:
   - title: "Mirror Descent Algorithms for Risk Budgeting Portfolios"
     authors: "Martín Arnaiz Iglesias, Adil Rengim Cetingoz, Noufel Frikha"
     venue: "Mathematics of Operations Research · INFORMS"
     year: 2026
+    demo: "/demo/"
     links:
       - label: "Journal"
         url: "https://pubsonline.informs.org/doi/10.1287/moor.2024.0847"
@@ -24,7 +25,7 @@ published:
         url: "https://hal.science/hal-04787053"
       - label: "Code"
         url: "https://github.com/martinarnaiziglesias/mirror_descent_rb"
-
+ 
 working:
   - title: "Robust Mirror Descent Algorithms for Risk Management"
     authors: "Martín Arnaiz Iglesias, Noufel Frikha"
